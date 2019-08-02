@@ -1,0 +1,25 @@
+
+# Unity cache directories
+Temp/
+Library/
+Build/
+obj/
+
+# Unity/MonoDevelop generated 
+*.userprefs
+/*.csproj
+/*.sln
+*.user
+*.unityproj
+.vs/**
+
+# Emacs generated documents and directories
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+.\#*
+/elpa/
+/network-security.data
