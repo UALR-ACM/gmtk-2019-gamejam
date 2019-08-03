@@ -25,11 +25,16 @@ public static class UnityEditorUtilities
 		if (aGameObject != null)
 		{
 			// Get the prefab object
-			prefab = PrefabUtility.GetPrefabParent(aGameObject);
+			//prefab = PrefabUtility.GetPrefabParent(aGameObject);
+			// This code added by John Clements to replace the previous line and update this asset for the current version of Unity
+			prefab = PrefabUtility.GetCorrespondingObjectFromSource(aGameObject);
+
 			if (prefab == null)
 			{
 				// If that fails, try the root
-				prefab = PrefabUtility.FindPrefabRoot(aGameObject);
+				//prefab = PrefabUtility.FindPrefabRoot(aGameObject);
+				// This code added by John Clements to replace the previous line and update this asset for the current version of Unity
+				prefab = PrefabUtility.GetOutermostPrefabInstanceRoot(aGameObject);
 			}
 		}
 		return prefab;

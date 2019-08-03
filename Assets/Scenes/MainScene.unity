@@ -405,6 +405,7 @@ GameObject:
   - component: {fileID: 674475537}
   - component: {fileID: 674475536}
   - component: {fileID: 674475541}
+  - component: {fileID: 674475542}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -514,6 +515,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &674475542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674475535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerLevel: 100
+  healthPercent: 0
+  speedPercent: 0
+  attackPercent: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,6 +1436,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be48bf9a294d6941bf8130f6750af95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  altFireBullet: {fileID: 0}
+  shotForce: 0
+  primaryFireTimer: 0
 --- !u!114 &1825844480
 MonoBehaviour:
   m_ObjectHideFlags: 0

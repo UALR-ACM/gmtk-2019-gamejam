@@ -13,6 +13,7 @@ public class GameBoard : MonoBehaviour {
         foreach (GameTile tile in tiles) {
             tile.ClearPath();
         }
+        
         tiles[tiles.Length / 2].BecomeDestination();
         searchFrontier.Enqueue(tiles[tiles.Length / 2]);
 
