@@ -806,9 +806,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec868cb8bcae670488add4fa1565adb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  altFireBullet: {fileID: 3673575748617762979, guid: a0dcb6b211c25f949aa5ad78acff0d1b,
+  altFireBullet: {fileID: 8995409993292490312, guid: 097dac920707652408d0967f01258c2d,
     type: 3}
-  shotForce: 2500
+  shotForce: 3000
   originBulletLaunch: {fileID: 1487873195}
   firstCam: {fileID: 1059711872}
 --- !u!114 &535116210
