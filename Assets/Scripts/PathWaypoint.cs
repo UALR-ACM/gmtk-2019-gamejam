@@ -15,8 +15,13 @@ public class PathWaypoint : MonoBehaviour {
 	private float distance;
 
 	private void Awake() {
-		if (type == WaypointType.CITY) distance = 0f;
-		else distance = float.MaxValue;
+		if (type == WaypointType.CITY) {
+			distance = 0f;
+		} else {
+			distance = float.MaxValue;
+			//this.gameObject.GetComponentInParent<PathWaypoint>().AddNeighbor(this);
+			this.transform.parent.GetComponentInParent<PathWaypoint>().AddNeighbor(this);
+		}
 	}
 
 	private void Start() {
@@ -28,7 +33,7 @@ public class PathWaypoint : MonoBehaviour {
 	private void FixedUpdate() {
 		// This method currently only used for debugging purposes
 		if(nextOnPath != null)
-			Debug.DrawLine(this.transform.position, nextOnPath.transform.position, Color.white, 1.0f);
+			Debug.DrawLine(this.transform.position, nextOnPath.transform.position);
 	}
 
 	public void AttemptToFormPath(PathWaypoint otherWaypoint, float distanceFromCity) {
@@ -50,7 +55,7 @@ public class PathWaypoint : MonoBehaviour {
 		return nextOnPath.transform.position - this.transform.position;
 	}
 
-
-
-
+	public void AddNeighbor(PathWaypoint neighbor) {
+		neighbors.Add(neighbor);
+	}
 }
