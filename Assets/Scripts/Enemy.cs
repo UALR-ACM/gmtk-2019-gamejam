@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum EnemyType {
-	Lich, Golem, MouseKnight
+	Lich, Golem, Grunt
 }
 
 public class Enemy : MonoBehaviour {

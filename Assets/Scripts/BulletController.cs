@@ -6,10 +6,15 @@ public class BulletController : MonoBehaviour
 {
     public GameObject explosionEffect;
     public float explosionRadius = 10f;
-    public float power; 
+    public float power;
+    
     private void Update()
     {
         transform.Rotate(20, 0, 0);
+        if(transform.position.y < -5)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -28,6 +33,12 @@ public class BulletController : MonoBehaviour
                 if (!rb.gameObject.CompareTag("Player"))
                 {
                     rb.AddExplosionForce(power, explosionPos, explosionRadius);
+                }
+
+                if (rb.gameObject.CompareTag("Enemy"))
+                {
+                    EntityStats explodedVictim = rb.gameObject.GetComponent<EntityStats>();
+                    explodedVictim.Damage(this.gameObject.GetComponent<EntityStats>().getAttack());
                 }
             }
         }

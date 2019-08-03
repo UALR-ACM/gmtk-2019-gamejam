@@ -477,6 +477,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 6548666980413436819, guid: 4de0eadfc6e9fb74fbe3a370694162a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6548666980413436820, guid: 4de0eadfc6e9fb74fbe3a370694162a2,
         type: 3}
       propertyPath: m_LocalPosition.x

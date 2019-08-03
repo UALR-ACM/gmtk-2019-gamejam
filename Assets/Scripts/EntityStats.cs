@@ -35,4 +35,9 @@ public class EntityStats : MonoBehaviour {
     public float GetHealthPercentage() {
         return this.currentHealth / maxHealth;
     }
+
+    public float getAttack()
+    {
+        return attack;
+    }
 }

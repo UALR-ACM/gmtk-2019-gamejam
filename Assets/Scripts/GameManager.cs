@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
-    [SerializeField] EnemySpawner enemySpawner = default;
+public class GameManager : MonoBehaviour
+{
+
     public GameObject tank;
     public GameObject headTank;
+
     public Camera firstCam;
     public Camera upCam;
 
     //private ScriptableObject towerController, mouseCameraController;
 
-    void Start() {
+    void Start()
+    {
+
         upCam.enabled = true;
         firstCam.enabled = false;
 
@@ -21,8 +25,11 @@ public class GameManager : MonoBehaviour {
 
     }
 
-    void Update() {
-        if (Input.GetKeyDown("space")) {
+    void Update()
+    {
+
+        if (Input.GetKeyDown("space"))
+        {
             upCam.enabled = !upCam.enabled;
             firstCam.enabled = !firstCam.enabled;
 
