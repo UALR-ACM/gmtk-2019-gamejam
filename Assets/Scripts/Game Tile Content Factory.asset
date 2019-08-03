@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a96d7802c1c21640985a75bc4626d79, type: 3}
-  m_Name: New Game Tile Content Factory
+  m_Name: Game Tile Content Factory
   m_EditorClassIdentifier: 
   destinationPrefab: {fileID: 0}
   emptyPrefab: {fileID: 0}
