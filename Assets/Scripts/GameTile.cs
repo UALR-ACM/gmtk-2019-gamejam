@@ -43,7 +43,7 @@ public class GameTile : MonoBehaviour{
     }
 
     GameTile GrowPathTo(GameTile neighbor) {
-        if(!HasPath || neighbor == null) return null;
+        if(!HasPath || neighbor == null || neighbor.HasPath) return null;
         neighbor.distance = distance + 1;
         neighbor.nextOnPath = this;
         return neighbor;

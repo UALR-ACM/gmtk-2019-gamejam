@@ -337,8 +337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerLevel: 0
-  maxHealth: 0
+  powerLevel: 20
+  maxHealth: 0.5
   speed: 0
   attack: 0
 --- !u!1 &2044215829
