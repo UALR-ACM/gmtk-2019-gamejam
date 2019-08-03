@@ -15,9 +15,8 @@ public class HealthBar : MonoBehaviour {
 	private void Start() {
 		healthFillMaxWidth = healthFillPanel.rect.width;
 
-        healthFill = transform.Find("HP Bar Fill");
-        healthRect = healthFill.GetComponent<RectTransform>().rect;
-        Debug.Log(healthRect.width);
+        healthFill = transform.Find("HP Bar Fill").gameObject;
+
 
 
     }
@@ -26,6 +25,18 @@ public class HealthBar : MonoBehaviour {
     {
         //Debug.Log(healthRect.width);
         //healthRect.width -= 10.0f;
-        Debug.Log(healthRect.width);
+        healthRect = healthFill.GetComponent<RectTransform>().rect;
+
+        if ( Input.GetKeyDown("m"))
+        {
+            //healthRect.width = healthRect.width - 100.0f;
+            healthRect = healthFill.GetComponent<RectTransform>().rect;
+            Debug.Log(healthRect.width);
+            //Debug.Log(healthRect.width);
+            //healthRect.width = 50;
+            //healthRect = healthFill.GetComponent<RectTransform>().rect;
+            //Debug.Log(healthRect.width);
+        }
+
     }
 }
