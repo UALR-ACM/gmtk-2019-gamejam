@@ -24,7 +24,9 @@ public class BulletTrail : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && primaryFire >= primaryFireTimer)
         {
+            //Mask layers, so only layer 2 registers the collision
             int layerMask = 1 << 2;
+            //Inverses mask, so every layer EXCEPT  layer 2 registers the collision. This prevents the terrain from triggering a collision with the primary fire.
             layerMask = ~layerMask;
             RaycastHit hit;
             Vector3 barrelExit = transform.position;
@@ -68,4 +70,6 @@ public class BulletTrail : MonoBehaviour
         trail.SetPosition(0, targetPosition);
         trail.SetPosition(1, endPosition);
     }
+
+    
 }

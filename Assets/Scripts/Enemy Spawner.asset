@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lichPrefab: {fileID: 0}
   golemPrefab: {fileID: 0}
-  mouseKnightPrefab: {fileID: 0}
+  gruntPrefab: {fileID: 0}
