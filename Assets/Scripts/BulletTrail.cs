@@ -71,8 +71,5 @@ public class BulletTrail : MonoBehaviour
         trail.SetPosition(1, endPosition);
     }
 
-    //Changes the fire rate of the primary weapon by decreasing the timer threshold. Passing in a lower value will cause the weapon to shoot faster
-    public void changeFireRate(float newFireTimer) {
-        primaryFireTimer = newFireTimer;
-    }
+    
 }

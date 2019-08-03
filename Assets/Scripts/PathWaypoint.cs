@@ -49,8 +49,4 @@ public class PathWaypoint : MonoBehaviour {
 	public Vector3 GetVector3ToNext() {
 		return nextOnPath.transform.position - this.transform.position;
 	}
-
-
-
-
 }

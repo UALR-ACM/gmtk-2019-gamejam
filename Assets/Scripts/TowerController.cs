@@ -9,7 +9,8 @@ public class TowerController : MonoBehaviour
     
     public GameObject altFireBullet;
     public float shotForce;
-    
+    public float secondaryFireTimer = 5.0f;
+    private float secondaryFire = 5.0f;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -22,17 +23,34 @@ public class TowerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+        secondaryFire += Time.deltaTime;
         bool altFire = Input.GetButtonDown("Fire2");
 
-        if (altFire)
+        if (altFire && secondaryFire >= secondaryFireTimer)
         {
             GameObject cannonShell = Instantiate(altFireBullet, transform.position, transform.rotation);
             Physics.IgnoreCollision(cannonShell.GetComponent<Collider>(), GetComponent<Collider>());
             cannonShell.GetComponent<Rigidbody>().AddForce(cam.transform.forward * shotForce);
-            
+
+            secondaryFire = 0f;
         }
 
+        if (Input.GetButtonDown("Jump"))
+        {
+            ChangeFireRate(5f);
+        }
+    }
+
+    //Changes the fire rate of the primary weapon by decreasing the timer threshold. Passing in a lower value will cause the weapon to shoot faster
+    public void ChangeFireRate(float newTimer)
+    {
+        BulletTrail upgradedRate = gameObject.GetComponent<BulletTrail>();
+        upgradedRate.primaryFireTimer = newTimer;
+    }
+    public void ChangeSecondaryFireRate(float newTimer)
+    {
+        secondaryFireTimer = newTimer;
     }
 }
+
 

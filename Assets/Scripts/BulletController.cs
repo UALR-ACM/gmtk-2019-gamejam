@@ -6,7 +6,8 @@ public class BulletController : MonoBehaviour
 {
     public GameObject explosionEffect;
     public float explosionRadius = 10f;
-    public float power; 
+    public float power;
+    
     private void Update()
     {
         transform.Rotate(20, 0, 0);
