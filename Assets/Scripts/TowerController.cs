@@ -20,6 +20,7 @@ public class TowerController : MonoBehaviour
     {
 
         bool shoot = Input.GetButtonDown("Fire1");
+        bool altFire = Input.GetButtonDown("Fire2");
 
         if (shoot)
         {
@@ -33,29 +34,6 @@ public class TowerController : MonoBehaviour
                 Debug.DrawRay(cam.transform.position, cam.transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
             }
         }
-
-        //if (shoot && PauseMenu.GameIsPaused != true)
-        //{
-        //    shootBullet();
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    PauseMenu.GameIsPaused = true;
-        //}
-
     }
-
-    //protected void LateUpdate()
-    //{
-    //    transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
-    //}
-
-    //private void ShootBullet()
-    //{
-    //    Rigidbody bulletInstance = Instantiate(m_Bullet, (transform.position + Camera.main.transform.forward * 2), m_FireTransform.rotation) as Rigidbody;
-    //    bulletInstance.velocity = m_FireTransform.forward * 10;
-
-    //}
 }
 
