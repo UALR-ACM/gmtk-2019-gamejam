@@ -28,8 +28,13 @@ public class BulletController : MonoBehaviour
         foreach (Collider hit in colliders){
             Rigidbody rb = hit.GetComponent<Rigidbody>();
 
-            if(rb != null)
+            //Debug.Log(hit.transform.gameObject.name.ToString());
+            Debug.Log(hit.transform.gameObject.tag);
+
+
+            if (hit.transform.gameObject.CompareTag("Enemy"))
             {
+<<<<<<< HEAD
                 if (!rb.gameObject.CompareTag("Player"))
                 {
                     rb.AddExplosionForce(power, explosionPos, explosionRadius);
@@ -40,7 +45,56 @@ public class BulletController : MonoBehaviour
                     EntityStats explodedVictim = rb.gameObject.GetComponent<EntityStats>();
                     explodedVictim.Damage(this.gameObject.GetComponent<EntityStats>().getAttack());
                 }
+=======
+                Debug.Log("Enemy touch");
+
+                GameObject enemy = hit.transform.gameObject;
+                var enemyStats = enemy.GetComponent<EntityStats>();
+                enemyStats.Damage(0.1f);
+
+
+>>>>>>> 3de5328b5962a17a6b075a17aa07cac4a81c3eda
             }
+
+
+            // Enemy don't have any rigidbody for now
+            //if (rb != null)
+            //{
+
+            //    //Debug.Log("rb touch");
+
+
+            //    rb.AddExplosionForce(power, explosionPos, explosionRadius);
+
+            //    //if (!rb.gameObject.CompareTag("Player"))
+            //    //{
+            //    //    rb.AddExplosionForce(power, explosionPos, explosionRadius);
+            //    //}
+
+            //    //if (hit.transform.gameObject.CompareTag("Enemy"))
+            //    //{
+            //    //    Debug.Log("Enemy touch");
+
+            //    //    GameObject enemy = hit.transform.gameObject;
+            //    //    var enemyStats = enemy.GetComponent<EntityStats>();
+            //    //    enemyStats.Damage(0.1f);
+
+
+            //    //}
+
+            //    //if (rb.gameObject.CompareTag("Enemy"))
+            //    //{
+
+            //    //    Debug.Log("rb of an ennemy");
+
+            //    //    //EntityStats explodedVictim = rb.gameObject.GetComponent<EntityStats>();
+            //    //    //explodedVictim.Damage(this.gameObject.GetComponent<EntityStats>().getAttack());
+            //    //}
+            //}
+
+
+
+
         }
 
         Destroy(gameObject);

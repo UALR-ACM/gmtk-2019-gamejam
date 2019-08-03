@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
         firstCam.enabled = false;
 
         //headTank = GameObject.Find("HeadTank");
-        headTank.GetComponent<TowerController>().enabled = false;
-        headTank.GetComponent<MouseCameraController>().enabled = false;
+        headTank.GetComponent<TankShotController>().enabled = false;
+        firstCam.GetComponent<MouseCameraController>().enabled = false;
 
     }
 
@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour
             // disable the possibility to move the tank when we are in first view
             // activate the first shooter view
             tank.GetComponent<TankMouvement>().enabled = !tank.GetComponent<TankMouvement>().enabled;
-            headTank.GetComponent<TowerController>().enabled = !headTank.GetComponent<TowerController>().enabled;
-            headTank.GetComponent<MouseCameraController>().enabled = !headTank.GetComponent<MouseCameraController>().enabled;
+            headTank.GetComponent<TankShotController>().enabled = !headTank.GetComponent<TankShotController>().enabled;
+            firstCam.GetComponent<MouseCameraController>().enabled = !firstCam.GetComponent<MouseCameraController>().enabled;
         }
 
     }

@@ -6,38 +6,49 @@ public class TowerController : MonoBehaviour
 {
     Rigidbody rb;
     GameObject cam;
-    
+
     public GameObject altFireBullet;
     public float shotForce;
+<<<<<<< HEAD
     public float secondaryFireTimer = 5.0f;
     private float secondaryFire = 5.0f;
+=======
+
+>>>>>>> 3de5328b5962a17a6b075a17aa07cac4a81c3eda
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
         cam = transform.GetChild(0).gameObject;
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
         secondaryFire += Time.deltaTime;
+=======
+
+>>>>>>> 3de5328b5962a17a6b075a17aa07cac4a81c3eda
         bool altFire = Input.GetButtonDown("Fire2");
 
         if (altFire && secondaryFire >= secondaryFireTimer)
         {
             GameObject cannonShell = Instantiate(altFireBullet, transform.position, transform.rotation);
-            Physics.IgnoreCollision(cannonShell.GetComponent<Collider>(), GetComponent<Collider>());
+            Physics.IgnoreCollision(cannonShell.GetComponent<Collider>(), transform.parent.gameObject.GetComponent<Collider>());
             cannonShell.GetComponent<Rigidbody>().AddForce(cam.transform.forward * shotForce);
 
+<<<<<<< HEAD
             secondaryFire = 0f;
         }
 
         if (Input.GetButtonDown("Jump"))
         {
             ChangeFireRate(5f);
+=======
+>>>>>>> 3de5328b5962a17a6b075a17aa07cac4a81c3eda
         }
     }
 
@@ -51,6 +62,10 @@ public class TowerController : MonoBehaviour
     {
         secondaryFireTimer = newTimer;
     }
+<<<<<<< HEAD
 }
 
 
+=======
+}
+>>>>>>> 3de5328b5962a17a6b075a17aa07cac4a81c3eda

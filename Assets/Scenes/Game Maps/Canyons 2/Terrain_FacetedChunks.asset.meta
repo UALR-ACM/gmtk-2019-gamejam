@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scenes/Game Maps/Canyons 2/Terrain_FacetedChunks.asset.meta
 guid: ad617e7197676de479f1797e441b3249
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 4300000
+=======
+guid: 6d2eb1c313499e249b513b3fead30d62
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+>>>>>>> 3de5328b5962a17a6b075a17aa07cac4a81c3eda:Assets/Materials/Ground.mat.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 
