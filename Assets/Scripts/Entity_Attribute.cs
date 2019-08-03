@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Entity_Attribute : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int Entity_Health;
+    private int Enemy_Speed;
+    private int Enemy_Body_Size;
+    
+    
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class Enemy_Attribute : Entity_Attribute
+{
+
+}
+
+public class Player_Attribute : Entity_Attribute
+{
+
 }
