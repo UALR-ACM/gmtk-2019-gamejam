@@ -6,7 +6,7 @@ public class EnemySpawner : ScriptableObject {
 
 	[SerializeField] Enemy lichPrefab = default;
 	[SerializeField] Enemy golemPrefab = default;
-	[SerializeField] Enemy mouseKnightPrefab = default;
+	[SerializeField] Enemy gruntPrefab = default;
 
 	Scene contentScene;
 
@@ -14,7 +14,7 @@ public class EnemySpawner : ScriptableObject {
 		switch (type) {
 			case EnemyType.Lich: return Get(lichPrefab);
 			case EnemyType.Golem: return Get(golemPrefab);
-			case EnemyType.MouseKnight: return Get(mouseKnightPrefab);
+			case EnemyType.Grunt: return Get(gruntPrefab);
 		}
 		Debug.Assert(false, "Unsupported type: " + type);
 		return null;
