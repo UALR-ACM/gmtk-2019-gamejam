@@ -29,6 +29,12 @@ public class BulletController : MonoBehaviour
                 {
                     rb.AddExplosionForce(power, explosionPos, explosionRadius);
                 }
+
+                if (rb.gameObject.CompareTag("Enemy"))
+                {
+                    EntityStats explodedVictim = rb.gameObject.GetComponent<EntityStats>();
+                    explodedVictim.Damage(this.gameObject.GetComponent<EntityStats>().getAttack());
+                }
             }
         }
 
