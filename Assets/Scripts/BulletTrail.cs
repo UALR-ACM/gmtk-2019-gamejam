@@ -8,7 +8,6 @@ public class BulletTrail : MonoBehaviour
     public LineRenderer trail;
     public float trailWidth = 0.1f;
     public float maxTrailLength = 5f;
-    public float bulletDamage = 1f;
     public float primaryFireTimer; //Time between primary fires (left-clicks
     private float primaryFire; //Determines whether or not the weapon can fire
 
@@ -30,14 +29,15 @@ public class BulletTrail : MonoBehaviour
             RaycastHit hit;
             Vector3 barrelExit = transform.position;
             barrelExit.y -= 0.5f;
-            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)) {
-                //Do damage stuff here
+            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+            {
+
                 if (hit.rigidbody != null)
                 {
                     if (hit.rigidbody.gameObject.CompareTag("Enemy"))
                     {
                         EntityStats enemy = hit.rigidbody.gameObject.GetComponent<EntityStats>();
-                        enemy.Damage(bulletDamage);
+                        enemy.Damage(this.gameObject.GetComponent<EntityStats>().getAttack());
                     }
                 }
             }

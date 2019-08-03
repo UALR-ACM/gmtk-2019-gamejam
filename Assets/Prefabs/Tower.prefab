@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 5600065111160593506}
   - component: {fileID: 5600065111160593501}
   - component: {fileID: 5600065111160593500}
+  - component: {fileID: -5184298678083825543}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Player
@@ -240,7 +241,6 @@ MonoBehaviour:
   trail: {fileID: 5600065111160593500}
   trailWidth: 0.05
   maxTrailLength: 100
-  bulletDamage: 5
   primaryFireTimer: 0.3
 --- !u!120 &5600065111160593500
 LineRenderer:
@@ -337,3 +337,19 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &-5184298678083825543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5600065111160593498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerLevel: 10
+  healthPercent: 0
+  speedPercent: 0.9
+  attackPercent: 0.1
