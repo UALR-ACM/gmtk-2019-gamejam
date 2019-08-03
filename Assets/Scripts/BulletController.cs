@@ -34,7 +34,6 @@ public class BulletController : MonoBehaviour
 
             if (hit.transform.gameObject.CompareTag("Enemy"))
             {
-<<<<<<< HEAD
                 if (!rb.gameObject.CompareTag("Player"))
                 {
                     rb.AddExplosionForce(power, explosionPos, explosionRadius);
@@ -45,15 +44,6 @@ public class BulletController : MonoBehaviour
                     EntityStats explodedVictim = rb.gameObject.GetComponent<EntityStats>();
                     explodedVictim.Damage(this.gameObject.GetComponent<EntityStats>().getAttack());
                 }
-=======
-                Debug.Log("Enemy touch");
-
-                GameObject enemy = hit.transform.gameObject;
-                var enemyStats = enemy.GetComponent<EntityStats>();
-                enemyStats.Damage(0.1f);
-
-
->>>>>>> 3de5328b5962a17a6b075a17aa07cac4a81c3eda
             }
 
 
