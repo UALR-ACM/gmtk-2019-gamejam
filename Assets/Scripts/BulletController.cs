@@ -25,16 +25,20 @@ public class BulletController : MonoBehaviour
 
             if(rb != null)
             {
-                if (!rb.gameObject.CompareTag("Player"))
-                {
-                    rb.AddExplosionForce(power, explosionPos, explosionRadius);
-                }
 
-                if (rb.gameObject.CompareTag("Enemy"))
-                {
-                    EntityStats explodedVictim = rb.gameObject.GetComponent<EntityStats>();
-                    explodedVictim.Damage(this.gameObject.GetComponent<EntityStats>().getAttack());
-                }
+
+                rb.AddExplosionForce(power, explosionPos, explosionRadius);
+
+                //if (!rb.gameObject.CompareTag("Player"))
+                //{
+                //    rb.AddExplosionForce(power, explosionPos, explosionRadius);
+                //}
+
+                //if (rb.gameObject.CompareTag("Enemy"))
+                //{
+                //    EntityStats explodedVictim = rb.gameObject.GetComponent<EntityStats>();
+                //    explodedVictim.Damage(this.gameObject.GetComponent<EntityStats>().getAttack());
+                //}
             }
         }
 
