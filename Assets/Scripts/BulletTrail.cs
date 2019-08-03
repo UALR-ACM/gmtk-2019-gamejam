@@ -30,13 +30,16 @@ public class BulletTrail : MonoBehaviour
             RaycastHit hit;
             Vector3 barrelExit = transform.position;
             barrelExit.y -= 0.5f;
-            if (!Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)) {
+            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)) {
                 //Do damage stuff here
-                //if (hit.rigidbody.gameObject.CompareTag("Enemy"))
-                //{
-                //    EntityStats enemy = hit.rigidbody.gameObject.GetComponent<EntityStats>();
-                //    enemy.Damage(bulletDamage);
-                //}
+                if (hit.rigidbody != null)
+                {
+                    if (hit.rigidbody.gameObject.CompareTag("Enemy"))
+                    {
+                        EntityStats enemy = hit.rigidbody.gameObject.GetComponent<EntityStats>();
+                        enemy.Damage(bulletDamage);
+                    }
+                }
             }
 
             ShowTrail(barrelExit, cam.transform.forward, maxTrailLength);
