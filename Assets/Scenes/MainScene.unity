@@ -457,6 +457,22 @@ CapsuleCollider:
   m_Height: 2.5701334
   m_Direction: 1
   m_Center: {x: 0, y: 0.78506535, z: 0}
+--- !u!114 &371011521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371011519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerLevel: 10
+  healthPercent: 0.05
+  speedPercent: 0
+  attackPercent: 0
 --- !u!1001 &535116204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1032,6 +1048,22 @@ CapsuleCollider:
   m_Height: 4.494273
   m_Direction: 1
   m_Center: {x: 0.069999985, y: 1.75, z: 0.07}
+--- !u!114 &1528911924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528911922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerLevel: 10
+  healthPercent: 0.05
+  speedPercent: 0
+  attackPercent: 0
 --- !u!1 &1614862331 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1298671735298112, guid: 0717d70c0de52434486d20a500d4f6c4,
@@ -1054,6 +1086,19 @@ MonoBehaviour:
   healthPercent: 0.05
   speedPercent: 0
   attackPercent: 0
+--- !u!114 &1614862333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614862331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1ef04b4dee3994ab33200a4efdd176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1001 &1838951418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1168,7 +1213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979069344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.89, y: -2.49, z: 0}
+  m_LocalPosition: {x: -0.89, y: -2.49, z: -35.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1059711873}
@@ -1282,3 +1327,19 @@ CapsuleCollider:
   m_Height: 2.4940944
   m_Direction: 1
   m_Center: {x: -0.050612662, y: 0.7470468, z: 0.0000000013231163}
+--- !u!114 &2012569139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012569137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerLevel: 10
+  healthPercent: 0.05
+  speedPercent: 0
+  attackPercent: 0
