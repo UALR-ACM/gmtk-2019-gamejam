@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 [CreateAssetMenu]
@@ -7,7 +9,7 @@ public class GameTileContentFactory : ScriptableObject {
   [SerializeField] GameTileContent destinationPrefab = default;
   [SerializeField] GameTileContent emptyPrefab = default;
 
-  public GameTileContent GetContent(GameTileContentType type) {
+  public GameTileContent Get(GameTileContentType type) {
     switch(type) {
       case GameTileContentType.Destination: return Get(destinationPrefab);
       case GameTileContentType.Empty: return Get(emptyPrefab);
