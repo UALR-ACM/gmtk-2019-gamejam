@@ -31,4 +31,8 @@ public class EntityStats : MonoBehaviour {
         if(currentHealth < 0f)
             Destroy(this.gameObject);
     }
+
+    public float getHealthPercent() {
+        return this.currentHealth / 100;
+    }
 }
