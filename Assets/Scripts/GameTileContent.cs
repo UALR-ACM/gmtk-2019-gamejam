@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class GameTileContent : MonoBehaviour {
   [SerializeField] GameTileContentType type = default;
