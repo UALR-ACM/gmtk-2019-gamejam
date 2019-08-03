@@ -15,17 +15,13 @@ public class PathWaypoint : MonoBehaviour {
 	private float distance;
 
 	private void Awake() {
-		if (type == WaypointType.CITY)
-			distance = 0f;
-		else
-			distance = float.MaxValue;
+		if (type == WaypointType.CITY) distance = 0f;
+		else distance = float.MaxValue;
 	}
 
 	private void Start() {
 		if (type == WaypointType.CITY) {
-			foreach (PathWaypoint neighbor in neighbors) {
-				neighbor.AttemptToFormPath(this, distance);
-			}
+			foreach (PathWaypoint neighbor in neighbors) neighbor.AttemptToFormPath(this, distance);
 		}
 	}
 
@@ -42,19 +38,13 @@ public class PathWaypoint : MonoBehaviour {
 			nextOnPath = otherWaypoint;
 			distance = distanceFromCity;
 
-			foreach(PathWaypoint neighbor in neighbors) {
-				neighbor.AttemptToFormPath(this, distance);
-			}
+			foreach(PathWaypoint neighbor in neighbors) neighbor.AttemptToFormPath(this, distance);
 		}
 	}
 
-	public WaypointType GetWaypointType() {
-		return type;
-	}
+	public WaypointType GetWaypointType() => type;
 
-	public PathWaypoint GetNextOnPath() {
-		return nextOnPath;
-	}
+	public PathWaypoint GetNextOnPath() => nextOnPath;
 
 	public Vector3 GetVector3ToNext() {
 		return nextOnPath.transform.position - this.transform.position;
