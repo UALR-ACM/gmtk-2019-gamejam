@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    //public GameObject explosionEffect;
+    public GameObject explosionEffect;
     private void Update()
     {
         transform.Rotate(20, 0, 0);
@@ -13,7 +13,9 @@ public class BulletController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //TODO: Enter damage numbers and add any explosion effects
-
+        GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);
+        //explosion.transform.parent = transform;
+        //gameObject.SetActive(false);
         Destroy(gameObject);
     }
 }
