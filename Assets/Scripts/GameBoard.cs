@@ -1,6 +1,5 @@
-﻿using System.Collections;
+﻿using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class GameBoard : MonoBehaviour {
     [SerializeField] Transform ground = default;
@@ -8,6 +7,29 @@ public class GameBoard : MonoBehaviour {
 
     Vector2Int size;
     GameTile[] tiles;
+    Queue<GameTile> searchFrontier = new Queue<GameTile>();
+
+    void FindPaths() {
+        foreach (GameTile tile in tiles) {
+            tile.ClearPath();
+        }
+        tiles[0].BecomeDestination();
+        searchFrontier.Enqueue(tiles[0]);
+
+        while(searchFrontier.Count > 0) {
+            GameTile tile = searchFrontier.Dequeue();
+            if(tile != null) {
+                searchFrontier.Enqueue(tile.GrowPathNorth());
+                searchFrontier.Enqueue(tile.GrowPathEast());
+                searchFrontier.Enqueue(tile.GrowPathSouth());
+                searchFrontier.Enqueue(tile.GrowPathWest());
+            }
+        }
+
+        foreach (GameTile tile in tiles) {
+            tile.ShowPath();
+        }
+    }
 
     public void Initialize (Vector2Int size) {
         //Create board of x,y size
@@ -17,8 +39,8 @@ public class GameBoard : MonoBehaviour {
         //Instantiate tiles and add them to array tiles
         Vector2 offset = new Vector2((size.x - 1) * 0.5f, (size.y - 1) * 0.5f);
         tiles = new GameTile[size.x * size.y];
-        for(int i = 0, y = 0; y < size.y; ++y) {
-            for(int x = 0; x < size.x; ++x, ++i) {
+        for(int i = 0, y = 0; y < size.y; y++) {
+            for(int x = 0; x < size.x; x++, i++) {
                 GameTile tile = tiles[i] = Instantiate(tilePrefab);
                 tile.transform.SetParent(transform, false);
                 tile.transform.localPosition = new Vector3(x - offset.x, 0f, y - offset.y);
@@ -28,5 +50,7 @@ public class GameBoard : MonoBehaviour {
                 if(y > 0) GameTile.MakeNorthSouthNeighbors(tile, tiles[i - size.x]);
             }
         }
+
+        FindPaths();
     }
 }
