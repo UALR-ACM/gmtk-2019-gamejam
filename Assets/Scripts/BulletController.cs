@@ -23,8 +23,13 @@ public class BulletController : MonoBehaviour
         foreach (Collider hit in colliders){
             Rigidbody rb = hit.GetComponent<Rigidbody>();
 
+            //Debug.Log(hit.transform.gameObject.name.ToString());
+            //Debug.Log(hit.transform.gameObject.tag);
+
             if(rb != null)
             {
+
+                //Debug.Log("rb touch");
 
 
                 rb.AddExplosionForce(power, explosionPos, explosionRadius);
@@ -34,12 +39,28 @@ public class BulletController : MonoBehaviour
                 //    rb.AddExplosionForce(power, explosionPos, explosionRadius);
                 //}
 
+                if (hit.transform.gameObject.CompareTag("Enemy"))
+                {
+                    Debug.Log("Enemy touch");
+
+                    GameObject enemy = hit.transform.gameObject;
+                    var enemyStats = enemy.GetComponent<EntityStats>();
+
+                }
+
                 //if (rb.gameObject.CompareTag("Enemy"))
                 //{
-                //    EntityStats explodedVictim = rb.gameObject.GetComponent<EntityStats>();
-                //    explodedVictim.Damage(this.gameObject.GetComponent<EntityStats>().getAttack());
+
+                //    Debug.Log("rb of an ennemy");
+
+                //    //EntityStats explodedVictim = rb.gameObject.GetComponent<EntityStats>();
+                //    //explodedVictim.Damage(this.gameObject.GetComponent<EntityStats>().getAttack());
                 //}
             }
+
+
+
+
         }
 
         Destroy(gameObject);

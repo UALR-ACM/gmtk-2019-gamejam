@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: -995243992075847476}
   - component: {fileID: 3673575748617762978}
   - component: {fileID: 1531649576132410816}
-  - component: {fileID: 7311577338200492920}
   m_Layer: 0
   m_Name: CannonShell
   m_TagString: Untagged
@@ -126,19 +125,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 96
   m_CollisionDetection: 0
---- !u!114 &7311577338200492920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3673575748617762979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerLevel: 5
-  healthPercent: 0
-  speedPercent: 0
-  attackPercent: 1
