@@ -39,13 +39,6 @@ public class GameTile : MonoBehaviour{
         nextOnPath = null;
     }
 
-    private void GrowPathTo(GameTile neighbor) {
-        Debug.Assert(HasPath, "No Path!");
-        if(neighbor == null || neighbor.HasPath) return;
-        neighbor.distance = distance + 1;
-        neighbor.nextOnPath = this;
-    }
-
     public GameTile GrowPathTo(GameTile neighbor) {
         if(!HasPath || neighbor == null) return null;
         neighbor.distance = distance + 1;
