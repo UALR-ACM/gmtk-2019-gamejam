@@ -12,4 +12,10 @@ public class HealthBar : MonoBehaviour {
 	private void Start() {
 		healthFillMaxWidth = healthFillPanel.rect.width;
 	}
+
+	private void Update() {
+		Rect rect = healthFillPanel.rect;
+		float newWidth = healthFillMaxWidth * stats.GetHealthPercentage();
+		healthFillPanel.rect.Set(rect.x, rect.y, newWidth, rect.height);
+	}
 }
