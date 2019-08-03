@@ -11,6 +11,7 @@ public class GameTile : MonoBehaviour{
         westRotation = Quaternion.Euler(90f, 270f, 0f);
 
     public bool HasPath => distance != int.MaxValue;
+    public bool IsAlternative {get; set;}
     public GameTile GrowPathNorth() => GrowPathTo(north);
     public GameTile GrowPathEast() => GrowPathTo(east);
     public GameTile GrowPathSouth() => GrowPathTo(south);
@@ -43,7 +44,7 @@ public class GameTile : MonoBehaviour{
     }
 
     GameTile GrowPathTo(GameTile neighbor) {
-        if(!HasPath || neighbor == null) return null;
+        if(!HasPath || neighbor == null || neighbor.HasPath) return null;
         neighbor.distance = distance + 1;
         neighbor.nextOnPath = this;
         return neighbor;
