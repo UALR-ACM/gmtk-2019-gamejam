@@ -57,7 +57,7 @@ public class TankShotController : MonoBehaviour
             //    //}
             //}
 
-            ShowTrail(launchIngBullet.transform.position, cam.transform.forward, 200.0f);
+            ShowTrail(launchIngBullet.transform.position, cam.transform.forward, maxTrailLength);
             trail.enabled = true;
             primaryFire = 0f;
 
@@ -83,13 +83,15 @@ public class TankShotController : MonoBehaviour
         if (Physics.Raycast(ray, out raycastHit, length))
         {
             if (raycastHit.transform.gameObject.CompareTag("Enemy"))
-            Debug.Log("hit ennemy");
-            endPosition = raycastHit.point;
+            {
+                Debug.Log("hit ennemy");
+                endPosition = raycastHit.point;
 
-            // apply damages
-            var enemy = raycastHit.transform.gameObject;
-            var enemyStats = enemy.GetComponent<EntityStats>();
-            enemyStats.Damage(0.1f);
+                // apply damages
+                var enemy = raycastHit.transform.gameObject;
+                var enemyStats = enemy.GetComponent<EntityStats>();
+                enemyStats.Damage(0.1f);
+            }
 
         }
 

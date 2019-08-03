@@ -24,39 +24,55 @@ public class BulletController : MonoBehaviour
             Rigidbody rb = hit.GetComponent<Rigidbody>();
 
             //Debug.Log(hit.transform.gameObject.name.ToString());
-            //Debug.Log(hit.transform.gameObject.tag);
+            Debug.Log(hit.transform.gameObject.tag);
 
-            if(rb != null)
+
+            if (hit.transform.gameObject.CompareTag("Enemy"))
             {
+                Debug.Log("Enemy touch");
 
-                //Debug.Log("rb touch");
+                GameObject enemy = hit.transform.gameObject;
+                var enemyStats = enemy.GetComponent<EntityStats>();
+                enemyStats.Damage(0.1f);
 
 
-                rb.AddExplosionForce(power, explosionPos, explosionRadius);
-
-                //if (!rb.gameObject.CompareTag("Player"))
-                //{
-                //    rb.AddExplosionForce(power, explosionPos, explosionRadius);
-                //}
-
-                if (hit.transform.gameObject.CompareTag("Enemy"))
-                {
-                    Debug.Log("Enemy touch");
-
-                    GameObject enemy = hit.transform.gameObject;
-                    var enemyStats = enemy.GetComponent<EntityStats>();
-
-                }
-
-                //if (rb.gameObject.CompareTag("Enemy"))
-                //{
-
-                //    Debug.Log("rb of an ennemy");
-
-                //    //EntityStats explodedVictim = rb.gameObject.GetComponent<EntityStats>();
-                //    //explodedVictim.Damage(this.gameObject.GetComponent<EntityStats>().getAttack());
-                //}
             }
+
+
+            // Enemy don't have any rigidbody for now
+            //if (rb != null)
+            //{
+
+            //    //Debug.Log("rb touch");
+
+
+            //    rb.AddExplosionForce(power, explosionPos, explosionRadius);
+
+            //    //if (!rb.gameObject.CompareTag("Player"))
+            //    //{
+            //    //    rb.AddExplosionForce(power, explosionPos, explosionRadius);
+            //    //}
+
+            //    //if (hit.transform.gameObject.CompareTag("Enemy"))
+            //    //{
+            //    //    Debug.Log("Enemy touch");
+
+            //    //    GameObject enemy = hit.transform.gameObject;
+            //    //    var enemyStats = enemy.GetComponent<EntityStats>();
+            //    //    enemyStats.Damage(0.1f);
+
+
+            //    //}
+
+            //    //if (rb.gameObject.CompareTag("Enemy"))
+            //    //{
+
+            //    //    Debug.Log("rb of an ennemy");
+
+            //    //    //EntityStats explodedVictim = rb.gameObject.GetComponent<EntityStats>();
+            //    //    //explodedVictim.Damage(this.gameObject.GetComponent<EntityStats>().getAttack());
+            //    //}
+            //}
 
 
 
