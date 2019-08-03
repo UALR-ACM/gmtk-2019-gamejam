@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a96d7802c1c21640985a75bc4626d79, type: 3}
   m_Name: Game Tile Content Factory
   m_EditorClassIdentifier: 
-  destinationPrefab: {fileID: 0}
-  emptyPrefab: {fileID: 0}
+  destinationPrefab: {fileID: 6124497012455401497, guid: 997e6e85c9dc6164580c163f06eba391,
+    type: 3}
+  emptyPrefab: {fileID: 6969236139786090693, guid: e501a1df6a307334d84320e6e6e789e0,
+    type: 3}
