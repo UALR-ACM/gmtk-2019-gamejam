@@ -5,6 +5,8 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public GameObject explosionEffect;
+    public float explosionRadius = 10f;
+    public float power; 
     private void Update()
     {
         transform.Rotate(20, 0, 0);
@@ -12,10 +14,25 @@ public class BulletController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //TODO: Enter damage numbers and add any explosion effects
+        //TODO: Enter damage numbers
         GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);
-        //explosion.transform.parent = transform;
-        //gameObject.SetActive(false);
+
+        Vector3 explosionPos = transform.position;
+        
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, explosionRadius);
+        foreach (Collider hit in colliders){
+            Rigidbody rb = hit.GetComponent<Rigidbody>();
+
+            if(rb != null)
+            {
+                if (!rb.gameObject.CompareTag("Player"))
+                {
+                    rb.AddExplosionForce(power, explosionPos, explosionRadius);
+                }
+            }
+        }
+
         Destroy(gameObject);
+        Destroy(explosion, 2);
     }
 }
