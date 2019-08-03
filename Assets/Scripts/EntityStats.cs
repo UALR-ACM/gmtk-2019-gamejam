@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EntityStats : MonoBehaviour {
 
+    public GameObject buffOrb;
+
     public int powerLevel;
     [Range(0f,1f)]
     public float healthPercent;
@@ -22,14 +24,25 @@ public class EntityStats : MonoBehaviour {
         currentHealth = maxHealth;
         speed = powerLevel * speedPercent;
         attack = powerLevel * attackPercent;
+
     }
 
     public void Damage(float dmgAmount) {
 
         currentHealth -= dmgAmount;
 
-        if(currentHealth < 0f)
-            Destroy(this.gameObject);
+        if (currentHealth < 0f)
+        {
+            
+            float buffDrop = Random.Range(0, 100);
+            if (buffDrop >= 50)
+            {
+                Instantiate(buffOrb, gameObject.transform.position, Quaternion.identity);
+                Debug.Log("Orb spawned");
+            }
+            Destroy(gameObject);
+        }
+            
     }
 
     public float getHealthPercent() {
