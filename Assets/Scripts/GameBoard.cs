@@ -1,6 +1,5 @@
-﻿using System.Collections;
+﻿using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class GameBoard : MonoBehaviour {
     [SerializeField] Transform ground = default;
@@ -8,6 +7,29 @@ public class GameBoard : MonoBehaviour {
 
     Vector2Int size;
     GameTile[] tiles;
+    Queue<GameTile> searchFrontier = new Queue<GameTile>();
+
+    void FindPaths() {
+        foreach (GameTile tile in tiles) {
+            tile.ClearPath();
+        }
+        tiles[0].BecomeDestination();
+        searchFrontier.Enqueue(tiles[0]);
+
+        while(searchFrontier.Count > 0) {
+            GameTile tile = searchFrontier.Dequeue();
+            if(tile != null) {
+                searchFrontier.Enqueue(tile.GrowPathNorth());
+                searchFrontier.Enqueue(tile.GrowPathEast());
+                searchFrontier.Enqueue(tile.GrowPathSouth());
+                searchFrontier.Enqueue(tile.GrowPathWest());
+            }
+        }
+
+        foreach (GameTile tile in tiles) {
+            tile.ShowPath();
+        }
+    }
 
     public void Initialize (Vector2Int size) {
         //Create board of x,y size
@@ -28,5 +50,7 @@ public class GameBoard : MonoBehaviour {
                 if(y > 0) GameTile.MakeNorthSouthNeighbors(tile, tiles[i - size.x]);
             }
         }
+
+        FindPaths();
     }
 }

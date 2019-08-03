@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021968eac60c07e44a42036f36d11cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardSize: {x: 50, y: 50}
+  boardSize: {x: 500, y: 500}
   board: {fileID: 158280221}
 --- !u!4 &1077836437
 Transform:
