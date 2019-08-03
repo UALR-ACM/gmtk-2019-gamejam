@@ -18,7 +18,7 @@ public class GameTile : MonoBehaviour{
 
     // Makes tiles easy to search by horizontally
     public static void MakeEastWestNeighbors (GameTile east, GameTile west) {
-        Debug.Assert( west.east == null && east.west == null, "Redfined Neighbors!");
+        Debug.Assert(west.east == null && east.west == null, "Redfined Neighbors!");
         west.east = east;
         east.west = west;
     }
@@ -42,8 +42,8 @@ public class GameTile : MonoBehaviour{
         nextOnPath = null;
     }
 
-    public GameTile GrowPathTo(GameTile neighbor) {
-        if(!HasPath || neighbor == null) return null;
+    GameTile GrowPathTo(GameTile neighbor) {
+        if(!HasPath || neighbor == null || neighbor.HasPath) return null;
         neighbor.distance = distance + 1;
         neighbor.nextOnPath = this;
         return neighbor;
