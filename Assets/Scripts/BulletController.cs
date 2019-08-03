@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletController : MonoBehaviour
-{   
+{
+    //public GameObject explosionEffect;
     private void Update()
     {
         transform.Rotate(20, 0, 0);
