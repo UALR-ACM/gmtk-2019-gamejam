@@ -5,18 +5,40 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
+    public GameObject tank;
+    public GameObject headTank;
 
-    public string gameView;
+    public Camera firstCam;
+    public Camera upCam;
 
-    // Start is called before the first frame update
+    //private ScriptableObject towerController, mouseCameraController;
+
     void Start()
     {
-        
+
+        upCam.enabled = true;
+        firstCam.enabled = false;
+
+        //headTank = GameObject.Find("HeadTank");
+        headTank.GetComponent<TowerController>().enabled = false;
+        headTank.GetComponent<MouseCameraController>().enabled = false;
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+        if (Input.GetKeyDown("space"))
+        {
+            upCam.enabled = !upCam.enabled;
+            firstCam.enabled = !firstCam.enabled;
+
+            // disable the possibility to move the tank when we are in first view
+            // activate the first shooter view
+            tank.GetComponent<TankMouvement>().enabled = !tank.GetComponent<TankMouvement>().enabled;
+            headTank.GetComponent<TowerController>().enabled = !headTank.GetComponent<TowerController>().enabled;
+            headTank.GetComponent<MouseCameraController>().enabled = !headTank.GetComponent<MouseCameraController>().enabled;
+        }
+
     }
 }
