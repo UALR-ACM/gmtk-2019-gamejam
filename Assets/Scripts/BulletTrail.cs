@@ -8,8 +8,9 @@ public class BulletTrail : MonoBehaviour
     public LineRenderer trail;
     public float trailWidth = 0.1f;
     public float maxTrailLength = 5f;
-    public float primaryFireTimer; //Time between primary fires (left-clicks)
+    public float primaryFireTimer; //Time between primary fires (left-clicks
     private float primaryFire; //Determines whether or not the weapon can fire
+
     void Start()
     {
         Vector3[] trailInit = new Vector3[2] { Vector3.zero, Vector3.zero };
@@ -23,13 +24,24 @@ public class BulletTrail : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && primaryFire >= primaryFireTimer)
         {
+            //Mask layers, so only layer 2 registers the collision
             int layerMask = 1 << 2;
+            //Inverses mask, so every layer EXCEPT  layer 2 registers the collision. This prevents the terrain from triggering a collision with the primary fire.
             layerMask = ~layerMask;
             RaycastHit hit;
             Vector3 barrelExit = transform.position;
             barrelExit.y -= 0.5f;
-            if (!Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)) {
-                //Do damage stuff here
+            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+            {
+
+                if (hit.rigidbody != null)
+                {
+                    if (hit.rigidbody.gameObject.CompareTag("Enemy"))
+                    {
+                        EntityStats enemy = hit.rigidbody.gameObject.GetComponent<EntityStats>();
+                        enemy.Damage(this.gameObject.GetComponent<EntityStats>().getAttack());
+                    }
+                }
             }
 
             ShowTrail(barrelExit, cam.transform.forward, maxTrailLength);
@@ -57,5 +69,10 @@ public class BulletTrail : MonoBehaviour
 
         trail.SetPosition(0, targetPosition);
         trail.SetPosition(1, endPosition);
+    }
+
+    //Changes the fire rate of the primary weapon by decreasing the timer threshold. Passing in a lower value will cause the weapon to shoot faster
+    public void changeFireRate(float newFireTimer) {
+        primaryFireTimer = newFireTimer;
     }
 }
