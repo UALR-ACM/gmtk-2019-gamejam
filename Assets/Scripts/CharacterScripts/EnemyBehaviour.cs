@@ -17,7 +17,7 @@ public class EnemyBehaviour : MonoBehaviour {
     private GameObject soundManager;
 
     // UI for loosing message
-    public GameObject loosingGameobject;
+    private GameObject loosingGameobject;
     private Camera firstViewCam, upViewCam;
 
     private void Start() {
@@ -53,11 +53,16 @@ public class EnemyBehaviour : MonoBehaviour {
                 //transform.Translate(Vector3.Lerp(start, end, t), Space.World);
                 transform.position = Vector3.Lerp(start, end, t);
             }
+
+            charactAnim.SetBool("Walk", true);
+
         }
 
 
         if (currentWaypoint.type == WaypointType.WALL)
         {
+
+            charactAnim.SetBool("Walk", false);
 
             switch (currentWaypoint.name)
             {

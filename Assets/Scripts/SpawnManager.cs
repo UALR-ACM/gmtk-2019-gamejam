@@ -73,8 +73,9 @@ public class SpawnManager : MonoBehaviour {
 
 	private void PrepareForNextWave() {
 		waveNumber++;
+        //gameManager.GetComponent<GameManager>().gameLevel = waveNumber;
 
-		currentSpawnRate = waveNumber * baseSpawnRate;
+        currentSpawnRate = waveNumber * baseSpawnRate;
 		currentSpawnNumber = waveNumber * baseSpawnNumber;
 
 		timeRemaining = currentSpawnRate * currentSpawnNumber;

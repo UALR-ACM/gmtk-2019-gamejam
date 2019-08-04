@@ -16,8 +16,6 @@ public class EntityStats : MonoBehaviour {
 	[Range(0f, 1f)]
 	public float attackPercent;
 
-    private bool isLiving;
-
 	private float maxHealth;
 	private float currentHealth;
 	private float speed;
@@ -29,21 +27,28 @@ public class EntityStats : MonoBehaviour {
     private GameObject gameManager;
 
 
-    private void Awake() {
-		maxHealth = healthPercent * powerLevel;
+    private void Awake()
+    {
+        gameManager = GameObject.Find("GameManager");
+
+        //Debug.Log("power level at instanciation : " + powerLevel.ToString());
+        //Debug.Log("level of the game : " + gameManager.GetComponent<GameManager>().gameLevel);
+        //Debug.Log("character stats : " + healthPercent.ToString());
+
+        powerLevel = powerLevel * gameManager.GetComponent<GameManager>().gameLevel;
+
+        maxHealth = healthPercent * powerLevel;
 		currentHealth = maxHealth;
 		speed = powerLevel * speedPercent;
 		attack = powerLevel * attackPercent;
 
         animController = transform.GetComponent<Animator>();
 
-        isLiving = true;
-
         buffOrb = Resources.Load<GameObject>("UpgradeOrb");
 
-        gameManager = GameObject.Find("GameManager");
 
-        powerLevel = powerLevel * gameManager.GetComponent<GameManager>().gameLevel;
+        Debug.Log("power level at instanciation : " + maxHealth.ToString());
+
 
     }
 
@@ -57,9 +62,14 @@ public class EntityStats : MonoBehaviour {
 
         if (currentHealth <= 0f)
         {
-            isLiving = false;
+
+            this.GetComponent<EnemyBehaviour>().enabled = false;
+            animController.SetBool("Walk", false);
+            animController.SetBool("isIdle", true);
             animController.SetBool("Die", true);
-            Invoke("DestroyCharact", 1);
+
+            this.GetComponent<CapsuleCollider>().enabled = false;
+            Invoke("DestroyCharact", 5);
 
             // increase level difficulty
             gameManager.GetComponent<GameManager>().numDeadEnemy += 1;
@@ -81,7 +91,7 @@ public class EntityStats : MonoBehaviour {
 
 	}
 
-	public float GetHealthPercentage() {
+    public float GetHealthPercentage() {
 		return this.currentHealth / maxHealth;
 	}
 
@@ -98,10 +108,7 @@ public class EntityStats : MonoBehaviour {
     }
 
 
-    public bool GetLivingStatus()
-    {
-        return this.isLiving;
-    }
+
 
     public void UpgradeAttack()
     {

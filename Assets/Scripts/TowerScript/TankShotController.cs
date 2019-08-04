@@ -9,7 +9,7 @@ public class TankShotController : MonoBehaviour
 
     public float trailWidth = 0.1f;
     public float maxTrailLength = 50f;
-    public float bulletDamage = 1f;
+    public float bulletDamage = 2f;
     public float primaryFireTimer; //Time between primary fires (left-clicks
     private float primaryFire; //Determines whether or not the weapon can fire
 
@@ -73,13 +73,13 @@ public class TankShotController : MonoBehaviour
         {
             if (raycastHit.transform.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log("hit ennemy");
+                //Debug.Log("hit ennemy");
                 endPosition = raycastHit.point;
 
                 // apply damages
                 var enemy = raycastHit.transform.gameObject;
                 var enemyStats = enemy.GetComponent<EntityStats>();
-                enemyStats.Damage(5.5f);
+                enemyStats.Damage(bulletDamage);
             }
 
         }

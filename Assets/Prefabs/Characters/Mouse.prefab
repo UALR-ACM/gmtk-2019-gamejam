@@ -1467,10 +1467,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerLevel: 10
+  buffOrb: {fileID: 0}
   healthPercent: 0.5
   speedPercent: 1
-  attackPercent: 0
+  attackPercent: 0.2
 --- !u!54 &5091501458456083525
 Rigidbody:
   m_ObjectHideFlags: 0

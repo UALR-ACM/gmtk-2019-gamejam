@@ -546,10 +546,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerLevel: 10
+  buffOrb: {fileID: 0}
   healthPercent: 0.2
-  speedPercent: 0.709
-  attackPercent: 0
+  speedPercent: 0.6
+  attackPercent: 1
 --- !u!114 &9004705089354243155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,7 +563,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWaypoint: {fileID: 0}
-  loosingGameobject: {fileID: 0}
 --- !u!136 &9004705089354243154
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -985,7 +984,7 @@ PrefabInstance:
         type: 3}
       propertyPath: stats
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9004705089354243156}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b021a601d1f03e44809a3ae38b2e65d, type: 3}
 --- !u!4 &9004705089458183745 stripped
