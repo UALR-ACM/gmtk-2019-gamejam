@@ -34,7 +34,7 @@ public class BombExplodeController : MonoBehaviour
 
                 GameObject enemy = hit.transform.gameObject;
                 var enemyStats = enemy.GetComponent<EntityStats>();
-                enemyStats.Damage(0.1f);
+                enemyStats.Damage(2f);
 
 
             }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EntityStats : MonoBehaviour {
 
-	public int powerLevel;
+	public float powerLevel;
+
 	[Range(0f, 1f)]
 	public float healthPercent;
 	[Range(0f, 1f)]
@@ -12,14 +13,16 @@ public class EntityStats : MonoBehaviour {
 	[Range(0f, 1f)]
 	public float attackPercent;
 
+    private bool isLiving;
+
 	private float maxHealth;
 	private float currentHealth;
 	private float speed;
 	private float attack;
-
+    
     private Animator animController;
-
-	private void Start() {
+    
+	private void Awake() {
 		maxHealth = healthPercent * powerLevel;
 		currentHealth = maxHealth;
 		speed = powerLevel * speedPercent;
@@ -27,9 +30,12 @@ public class EntityStats : MonoBehaviour {
 
         animController = transform.GetComponent<Animator>();
 
+        isLiving = true;
+
     }
 
-	public void Damage(float dmgAmount) {
+
+    public void Damage(float dmgAmount) {
 
 
         Debug.Log("damage made");
@@ -38,7 +44,7 @@ public class EntityStats : MonoBehaviour {
 
 		if (currentHealth <= 0f)
         {
-
+            isLiving = false;
             animController.SetBool("Die", true);
             Invoke("DestroyCharact", 2);
 
@@ -51,14 +57,20 @@ public class EntityStats : MonoBehaviour {
 		return this.currentHealth / maxHealth;
 	}
 
-	public float getAttack() {
+	public float GetAttack() {
 		return attack;
 	}
-
+    
     private void DestroyCharact()
     {
         Destroy(this.gameObject);
     }
+    public float GetSpeed() {
+        return speed;
+    }
 
-
+    public bool GetLivingStatus()
+    {
+        return this.isLiving;
+    }
 }

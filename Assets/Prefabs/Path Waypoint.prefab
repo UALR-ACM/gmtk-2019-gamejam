@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 703679508893743042}
   - component: {fileID: 6399411522780830690}
-  - component: {fileID: 5545969423758583989}
   - component: {fileID: 2538844438660817745}
   - component: {fileID: 8281462501694137978}
   m_Layer: 0
@@ -48,19 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbors: []
   type: 0
---- !u!135 &5545969423758583989
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361650955505612747}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &2538844438660817745
 MeshFilter:
   m_ObjectHideFlags: 0

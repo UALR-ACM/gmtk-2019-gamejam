@@ -36,4 +36,9 @@ public class SoundManager : MonoBehaviour
         destroyBuild.Play();
     }
 
+    public void StopDestroyBuild()
+    {
+        destroyBuild.Stop();
+    }
+
 }

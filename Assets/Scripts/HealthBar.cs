@@ -30,4 +30,10 @@ public class HealthBar : MonoBehaviour {
         healthFillPanel.localScale = newScale;
 
 	}
+
 }
+
+
+
+
+
