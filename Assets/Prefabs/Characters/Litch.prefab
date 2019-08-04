@@ -473,7 +473,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9004705089354243160}
   - component: {fileID: 9004705089354243159}
-  - component: {fileID: 9004705089354243158}
   - component: {fileID: 9004705089354243157}
   - component: {fileID: 9004705089354243156}
   - component: {fileID: 9004705089354243155}
@@ -522,22 +521,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9004705089354243158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9004705089354243153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerLevel: 20
-  healthPercent: 0.2
-  speedPercent: 0.3
-  attackPercent: 0.5
 --- !u!114 &9004705089354243157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,6 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWaypoint: {fileID: 0}
+  loosingGameobject: {fileID: 0}
 --- !u!136 &9004705089354243154
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1001,7 +985,7 @@ PrefabInstance:
         type: 3}
       propertyPath: stats
       value: 
-      objectReference: {fileID: 9004705089354243158}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b021a601d1f03e44809a3ae38b2e65d, type: 3}
 --- !u!4 &9004705089458183745 stripped

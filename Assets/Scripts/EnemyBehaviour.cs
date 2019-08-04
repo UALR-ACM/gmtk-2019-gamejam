@@ -16,12 +16,22 @@ public class EnemyBehaviour : MonoBehaviour {
     private Animator charactAnim;
     private GameObject soundManager;
 
+    // UI for loosing message
+    public GameObject loosingGameobject;
+    private Camera firstViewCam, upViewCam;
+
     private void Start() {
         speed = gameObject.GetComponent<EntityStats>().GetSpeed() * SPEED_MODIFIER;
         startTime = Time.time;
         charactAnim = transform.GetComponent<Animator>();
         soundManager = GameObject.Find("SoundManager");
         //transform.LookAt(currentWaypoint.GetNextOnPath().transform.position);
+
+        // loosing behavior
+        loosingGameobject = GameObject.Find("LoosingCanvas");
+        firstViewCam = GameObject.Find("FirstViewCam").GetComponent<Camera>();
+        upViewCam = GameObject.Find("UpCamera").GetComponent<Camera>();
+
     }
 
     private void Update() {
@@ -98,10 +108,18 @@ public class EnemyBehaviour : MonoBehaviour {
             transform.position = Vector3.Lerp(start, end, 50);
             charactAnim.SetBool("Attack", false);
             charactAnim.SetBool("isIdle", true);
+            Invoke("DisplayLoose", 1);
         }
     }
 
 
+    // Display loose message to the user 
+    public void DisplayLoose()
+    {
+        firstViewCam.enabled = false;
+        upViewCam.enabled = true;
+        loosingGameobject.GetComponent<Canvas>().enabled = true;
+    }
 
 
     // ennemy reach the city an start to attack it
@@ -109,7 +127,6 @@ public class EnemyBehaviour : MonoBehaviour {
     {
         mouv = false;
         charactAnim.SetBool("Attack", true);
-
     }
 
 
