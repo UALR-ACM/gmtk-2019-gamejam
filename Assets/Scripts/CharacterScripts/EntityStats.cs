@@ -42,7 +42,6 @@ public class EntityStats : MonoBehaviour {
 	}
 
     public float GetSpeed() {
-        Debug.Log("Returning: " + speed);
         return speed;
     }
 }

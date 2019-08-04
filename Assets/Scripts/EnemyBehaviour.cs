@@ -32,7 +32,6 @@ public class EnemyBehaviour : MonoBehaviour {
                 startTime = Time.time;
             } else {
                 //transform.Translate(Vector3.Lerp(start, end, t), Space.World);
-
                 transform.position = Vector3.Lerp(start, end, t);
             }
         }
