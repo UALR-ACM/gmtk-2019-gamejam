@@ -81,7 +81,9 @@ public class EntityStats : MonoBehaviour {
             float buffDrop = Random.Range(0, 100);
             if (buffDrop >= 50)
             {
-                Instantiate(buffOrb, gameObject.transform.position, Quaternion.identity);
+                Vector3 orbPos = gameObject.transform.position;
+                orbPos.y += 3;
+                Instantiate(buffOrb, orbPos, Quaternion.identity);
                 //Debug.Log("Orb spawned");
             }
 
