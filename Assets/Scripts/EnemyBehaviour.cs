@@ -29,7 +29,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
             if (t > 1f) {
                 currentWaypoint = currentWaypoint.GetNextOnPath();
-                transform.Rotate(currentWaypoint.GetNextOnPath().transform.position);
+                transform.LookAt(currentWaypoint.GetNextOnPath().transform.position);
                 startTime = Time.time;
             } else {
                 //transform.Translate(Vector3.Lerp(start, end, t), Space.World);
