@@ -5,12 +5,15 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour {
 
     public PathWaypoint currentWaypoint;
+    public const float SPEED_MODIFIER = 0.6f;
 
-    private float speed = 10f;
+    private float speed;
     private float startTime;
 
     private void Start() {
+        speed = gameObject.GetComponent<EntityStats>().GetSpeed() * SPEED_MODIFIER;
         startTime = Time.time;
+
     }
 
     private void Update() {
@@ -23,9 +26,8 @@ public class EnemyBehaviour : MonoBehaviour {
 
             float distCovered = (Time.time - startTime) * speed;
             float t = distCovered / journeyLength;
-            Debug.Log(t);
 
-            if (t > 0.95f) {
+            if (t > 1f) {
                 currentWaypoint = currentWaypoint.GetNextOnPath();
                 startTime = Time.time;
             } else {

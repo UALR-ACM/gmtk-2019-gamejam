@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EntityStats : MonoBehaviour {
 
-	public int powerLevel;
+	public float powerLevel;
+
 	[Range(0f, 1f)]
 	public float healthPercent;
 	[Range(0f, 1f)]
@@ -17,7 +18,7 @@ public class EntityStats : MonoBehaviour {
 	private float speed;
 	private float attack;
 
-	private void Start() {
+	private void Awake() {
 		maxHealth = healthPercent * powerLevel;
 		currentHealth = maxHealth;
 		speed = powerLevel * speedPercent;
@@ -36,7 +37,12 @@ public class EntityStats : MonoBehaviour {
 		return this.currentHealth / maxHealth;
 	}
 
-	public float getAttack() {
+	public float GetAttack() {
 		return attack;
 	}
+
+    public float GetSpeed() {
+        Debug.Log("Returning: " + speed);
+        return speed;
+    }
 }

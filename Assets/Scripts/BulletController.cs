@@ -42,7 +42,7 @@ public class BulletController : MonoBehaviour
                 if (rb.gameObject.CompareTag("Enemy"))
                 {
                     EntityStats explodedVictim = rb.gameObject.GetComponent<EntityStats>();
-                    explodedVictim.Damage(this.gameObject.GetComponent<EntityStats>().getAttack());
+                    explodedVictim.Damage(this.gameObject.GetComponent<EntityStats>().GetAttack());
                 }
             }
 
