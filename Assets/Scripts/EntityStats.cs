@@ -53,4 +53,19 @@ public class EntityStats : MonoBehaviour {
     {
         return attack;
     }
+
+    public void upgradeAttack()
+    {
+        attack += 1;
+    }
+
+    public void upgradeSpeed()
+    {
+        speed += 1;
+    }
+
+    public void upgradeHealth()
+    {
+        maxHealth += 1;
+    }
 }
