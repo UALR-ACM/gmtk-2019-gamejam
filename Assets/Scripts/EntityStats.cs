@@ -45,26 +45,26 @@ public class EntityStats : MonoBehaviour {
             
     }
 
-    public float getHealthPercent() {
+    public float GetHealthPercent() {
         return this.currentHealth / 100;
     }
 
-    public float getAttack()
+    public float GetAttack()
     {
         return attack;
     }
 
-    public void upgradeAttack()
+    public void UpgradeAttack()
     {
         attack += 1;
     }
 
-    public void upgradeSpeed()
+    public void UpgradeSpeed()
     {
         speed += 1;
     }
 
-    public void upgradeHealth()
+    public void UpgradeHealth()
     {
         maxHealth += 1;
     }

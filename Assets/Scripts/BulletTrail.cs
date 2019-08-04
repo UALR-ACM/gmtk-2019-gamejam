@@ -37,7 +37,7 @@ public class BulletTrail : MonoBehaviour
                     if (hit.rigidbody.gameObject.CompareTag("Enemy"))
                     {
                         EntityStats enemy = hit.rigidbody.gameObject.GetComponent<EntityStats>();
-                        enemy.Damage(this.gameObject.GetComponent<EntityStats>().getAttack());
+                        enemy.Damage(this.gameObject.GetComponent<EntityStats>().GetAttack());
                     }
                 }
             }

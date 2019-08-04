@@ -60,14 +60,14 @@ public class TankMouvement : MonoBehaviour
             //GameObject triggerHandler = other.gameObject;
             if(testMat.name == "DamageBuff")
             {
-                gameObject.GetComponent<EntityStats>().upgradeAttack();
+                gameObject.GetComponent<EntityStats>().UpgradeAttack();
             }else if (testMat.name == "SpeedBuff")
             {
-                gameObject.GetComponent<EntityStats>().upgradeSpeed();
+                gameObject.GetComponent<EntityStats>().UpgradeSpeed();
             }
             else
             {
-                gameObject.GetComponent<EntityStats>().upgradeHealth();
+                gameObject.GetComponent<EntityStats>().UpgradeHealth();
             }
         }
 
