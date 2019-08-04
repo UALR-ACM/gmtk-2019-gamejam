@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class DeathCounter : MonoBehaviour
 {
-    private int totalDeathCount;
+    private static int totalDeathCount;
 
-    public int getTotalDeathCount() {
+    public static int GetTotalDeathCount() {
         return totalDeathCount;
     }
 
-    public void incrementTotalDeathCount() {
+    public static void IncrementTotalDeathCount() {
         totalDeathCount += 1;
     }
 }

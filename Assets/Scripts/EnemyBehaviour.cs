@@ -13,7 +13,7 @@ public class EnemyBehaviour : MonoBehaviour {
     private void Start() {
         speed = gameObject.GetComponent<EntityStats>().GetSpeed() * SPEED_MODIFIER;
         startTime = Time.time;
-        transform.LookAt(currentWaypoint.GetNextOnPath().transform.position);
+        //transform.LookAt(currentWaypoint.GetNextOnPath().transform.position);
     }
 
     private void Update() {

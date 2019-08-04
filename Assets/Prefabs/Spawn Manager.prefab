@@ -43,3 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef3dc87673958a148b37ab64eb3aac87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnLocations: []
+  enemyPrefabs:
+  - {fileID: 5304911586177118974, guid: 176299a76ecfc7544b22a66fae200ac7, type: 3}
+  - {fileID: 4665124114459090, guid: 274c4c35ed05ea14c87492064b3cadfd, type: 3}
+  - {fileID: 4408297863206454, guid: 6bbfea6690ef7724ba495c866081f855, type: 3}
+  baseSpawnRate: 0
+  baseSpawnNumber: 0
+  restTime: 0

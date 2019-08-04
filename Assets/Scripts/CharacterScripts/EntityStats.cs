@@ -41,6 +41,11 @@ public class EntityStats : MonoBehaviour {
             }
             Destroy(this.gameObject);
         }
+
+		if (currentHealth < 0f) {
+            Destroy(this.gameObject);
+            DeathCounter.IncrementTotalDeathCount();
+        }
 	}
 
 	public float GetHealthPercentage() {

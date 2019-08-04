@@ -94,7 +94,7 @@ Transform:
   m_Children:
   - {fileID: 4595271056636968}
   - {fileID: 4413730522853366}
-  - {fileID: 4683783604670011564}
+  - {fileID: 9091974104545770539}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -143,9 +143,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerLevel: 20
-  healthPercent: 0
-  speedPercent: 0
-  attackPercent: 0
+  healthPercent: 0.5
+  speedPercent: 0.2
+  attackPercent: 0.3
 --- !u!1 &1088256926929212
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,11 +875,16 @@ PrefabInstance:
       propertyPath: stats
       value: 
       objectReference: {fileID: 682196068303614975}
+    - target: {fileID: 5400651484666113151, guid: 4345753c994517a419b1378caf263baa,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4345753c994517a419b1378caf263baa, type: 3}
---- !u!4 &4683783604670011564 stripped
+--- !u!4 &9091974104545770539 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8493786633279244536, guid: 4345753c994517a419b1378caf263baa,
+  m_CorrespondingSourceObject: {fileID: 5400651484666113151, guid: 4345753c994517a419b1378caf263baa,
     type: 3}
   m_PrefabInstance: {fileID: 3810003157765165140}
   m_PrefabAsset: {fileID: 0}
