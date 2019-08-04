@@ -12,18 +12,24 @@ public class CavasSwitcher : MonoBehaviour {
 		InstructionPanel.gameObject.SetActive(true);
 		GameUIPanel.gameObject.SetActive(false);
 		GameOverPanel.gameObject.SetActive(false);
+
+		Cursor.visible = true;
 	}
 
 	public void BeginPlay() {
 		InstructionPanel.gameObject.SetActive(false);
 		GameUIPanel.gameObject.SetActive(true);
 		GameOverPanel.gameObject.SetActive(false);
+
+		Cursor.visible = false;
 	}
 
 	public void EndGame() {
 		InstructionPanel.gameObject.SetActive(false);
 		GameUIPanel.gameObject.SetActive(false);
 		GameOverPanel.gameObject.SetActive(true);
+
+		Cursor.visible = true;
 	}
 
 	public void NewGame() {
