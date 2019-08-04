@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NewSpawnScript : MonoBehaviour
 {
 
     public PathWaypoint[] spawners;
     public Transform[] enemyPrefabs;
+    public TextMeshProUGUI waveTimer;
 
     private IEnumerator coroutine;
 
@@ -27,6 +29,8 @@ public class NewSpawnScript : MonoBehaviour
     {
         //float TimeBetweenTwoEnnemiSpawn = 4.0f / gameManager.GetComponent<GameManager>().gameLevel;
         //Debug.Log("time between two spawn : " + TimeBetweenTwoEnnemiSpawn);
+
+        waveTimer.SetText("Test");
     }
 
     private IEnumerator WaitAndSpawn()

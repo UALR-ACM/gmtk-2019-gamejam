@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     public int numDeadEnemy = 1;
     public int gameLevel = 1;
 
+    public TextMeshProUGUI numKillEnemiText;
 
     //private ScriptableObject towerController, mouseCameraController;
 
@@ -45,6 +47,9 @@ public class GameManager : MonoBehaviour
             headTank.GetComponent<TankShotController>().enabled = !headTank.GetComponent<TankShotController>().enabled;
             firstCam.GetComponent<MouseCameraController>().enabled = !firstCam.GetComponent<MouseCameraController>().enabled;
         }
+
+        var numEnemyToDisplay = numDeadEnemy - 1;
+        numKillEnemiText.SetText(numEnemyToDisplay.ToString());
 
     }
 }
