@@ -20,6 +20,8 @@ public class EnemyBehaviour : MonoBehaviour {
     private GameObject loosingGameobject;
     private Camera firstViewCam, upViewCam;
 
+    private GameObject canvasSwitcher;
+
     private void Start() {
         speed = gameObject.GetComponent<EntityStats>().GetSpeed() * SPEED_MODIFIER;
         startTime = Time.time;
@@ -31,6 +33,8 @@ public class EnemyBehaviour : MonoBehaviour {
         loosingGameobject = GameObject.Find("LoosingCanvas");
         firstViewCam = GameObject.Find("FirstViewCam").GetComponent<Camera>();
         upViewCam = GameObject.Find("UpCamera").GetComponent<Camera>();
+
+        canvasSwitcher = GameObject.Find("Canvas");
     }
 
     private void Update() {
@@ -122,7 +126,10 @@ public class EnemyBehaviour : MonoBehaviour {
     {
         firstViewCam.enabled = false;
         upViewCam.enabled = true;
-        loosingGameobject.GetComponent<Canvas>().enabled = true;
+        //loosingGameobject.GetComponent<Canvas>().enabled = true;
+
+
+        canvasSwitcher.GetComponent<CavasSwitcher>().EndGame();
     }
 
 

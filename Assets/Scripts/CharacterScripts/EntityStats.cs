@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EntityStats : MonoBehaviour {
 
 
 	private float powerLevel = 10f;
     public GameObject buffOrb;
-    
 
-	[Range(0f, 1f)]
+
+    [Range(0f, 1f)]
 	public float healthPercent;
 	[Range(0f, 1f)]
 	public float speedPercent;
@@ -78,14 +79,18 @@ public class EntityStats : MonoBehaviour {
                 gameManager.GetComponent<GameManager>().gameLevel++;
             }
 
-            float buffDrop = Random.Range(0, 100);
-            if (buffDrop >= 50)
-            {
-                Vector3 orbPos = gameObject.transform.position;
-                orbPos.y += 3;
-                Instantiate(buffOrb, orbPos, Quaternion.identity);
-                //Debug.Log("Orb spawned");
-            }
+            
+
+
+
+            //float buffDrop = Random.Range(0, 100);
+            //if (buffDrop >= 50)
+            //{
+            //    Vector3 orbPos = gameObject.transform.position;
+            //    orbPos.y += 3;
+            //    Instantiate(buffOrb, orbPos, Quaternion.identity);
+            //    //Debug.Log("Orb spawned");
+            //}
 
 
         }

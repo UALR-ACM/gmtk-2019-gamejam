@@ -8,7 +8,7 @@ public class NewSpawnScript : MonoBehaviour
 
     public PathWaypoint[] spawners;
     public Transform[] enemyPrefabs;
-    public TextMeshProUGUI waveTimer;
+    public TextMeshProUGUI waveCounter;
 
     private IEnumerator coroutine;
 
@@ -17,6 +17,7 @@ public class NewSpawnScript : MonoBehaviour
     private GameObject gameManager;
 
     public int numberOfEnimyByWaves = 1;
+    private int vaweCounter = 0;
 
     void Start()
     {
@@ -30,7 +31,8 @@ public class NewSpawnScript : MonoBehaviour
         //float TimeBetweenTwoEnnemiSpawn = 4.0f / gameManager.GetComponent<GameManager>().gameLevel;
         //Debug.Log("time between two spawn : " + TimeBetweenTwoEnnemiSpawn);
 
-        waveTimer.SetText("Test");
+        waveCounter.SetText(vaweCounter.ToString());
+
     }
 
     private IEnumerator WaitAndSpawn()
@@ -59,6 +61,7 @@ public class NewSpawnScript : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
             }
 
+            vaweCounter++;
 
         }
 
