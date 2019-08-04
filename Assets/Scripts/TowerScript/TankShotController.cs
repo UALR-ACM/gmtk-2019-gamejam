@@ -43,21 +43,6 @@ public class TankShotController : MonoBehaviour
 
             int layerMask = 1 << 2;
             layerMask = ~layerMask;
-            RaycastHit hit;
-
-            //Vector3 barrelExit = transform.position;
-            //barrelExit.y -= 0.5f;
-
-            //if (!Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Mathf.Infinity, layerMask))
-            //{
-            //    Debug.Log("here");
-            //    //Do damage stuff here
-            //    //if (hit.rigidbody.gameObject.CompareTag("Enemy"))
-            //    //{
-            //    //    EntityStats enemy = hit.rigidbody.gameObject.GetComponent<EntityStats>();
-            //    //    enemy.Damage(bulletDamage);
-            //    //}
-            //}
 
             ShowTrail(launchIngBullet.transform.position, cam.transform.forward, maxTrailLength);
             trail.enabled = true;

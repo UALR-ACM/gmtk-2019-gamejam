@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EntityStats : MonoBehaviour {
 
-	public float powerLevel;
+	private float powerLevel = 10f;
 
 	[Range(0f, 1f)]
 	public float healthPercent;
@@ -21,8 +21,13 @@ public class EntityStats : MonoBehaviour {
 	private float attack;
     
     private Animator animController;
-    
-	private void Awake() {
+
+    private GameObject buffOrb;
+
+    private GameObject gameManager;
+
+
+    private void Awake() {
 		maxHealth = healthPercent * powerLevel;
 		currentHealth = maxHealth;
 		speed = powerLevel * speedPercent;
@@ -32,24 +37,44 @@ public class EntityStats : MonoBehaviour {
 
         isLiving = true;
 
+        buffOrb = Resources.Load<GameObject>("UpgradeOrb");
+
+        gameManager = GameObject.Find("GameManager");
+
+        powerLevel = powerLevel * gameManager.GetComponent<GameManager>().gameLevel;
+
     }
 
 
     public void Damage(float dmgAmount) {
 
 
-        Debug.Log("damage made");
-        Debug.Log(currentHealth);
+        //Debug.Log("damage made");
+        //Debug.Log(currentHealth);
 		currentHealth -= dmgAmount;
 
 		if (currentHealth <= 0f)
         {
             isLiving = false;
             animController.SetBool("Die", true);
-            Invoke("DestroyCharact", 2);
+            Invoke("DestroyCharact", 1);
+
+            // increase level difficulty
+            gameManager.GetComponent<GameManager>().numDeadEnemy += 1;
+            if (gameManager.GetComponent<GameManager>().numDeadEnemy % 10 == 0)
+            {
+                gameManager.GetComponent<GameManager>().gameLevel++;
+            }
+
+            float buffDrop = Random.Range(0, 100);
+            if (buffDrop >= 50)
+            {
+                Instantiate(buffOrb, gameObject.transform.position, Quaternion.identity);
+                //Debug.Log("Orb spawned");
+            }
+
 
         }
-
 
 	}
 
@@ -72,5 +97,21 @@ public class EntityStats : MonoBehaviour {
     public bool GetLivingStatus()
     {
         return this.isLiving;
+    }
+
+
+    public void UpgradeAttack()
+    {
+        attack += 1;
+    }
+
+    public void UpgradeSpeed()
+    {
+        speed += 1;
+    }
+
+    public void UpgradeHealth()
+    {
+        maxHealth += 1;
     }
 }

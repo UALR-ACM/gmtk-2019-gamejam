@@ -17,8 +17,8 @@ public class WallHealth : MonoBehaviour
         // yMaz = 700
         currentWallHealth = healthBar.transform.localScale.y;
 
-        Debug.Log("Max Health");
-        Debug.Log(currentWallHealth);
+        //Debug.Log("Max Health");
+        //Debug.Log(currentWallHealth);
 
     }
 
@@ -36,9 +36,9 @@ public class WallHealth : MonoBehaviour
     public void GetDamage(float damageValue)
     {
 
-        Debug.Log(damageValue.ToString());
+        // Debug.Log(damageValue.ToString());
         currentWallHealth -= damageValue;
-        Debug.Log(currentWallHealth);
+        // Debug.Log(currentWallHealth);
 
         if (currentWallHealth <= 0)
         {

@@ -11,6 +11,12 @@ public class GameManager : MonoBehaviour
     public Camera firstCam;
     public Camera upCam;
 
+    // handle number or deaths and level of the game
+
+    public int numDeadEnemy = 1;
+    public int gameLevel = 1;
+
+
     //private ScriptableObject towerController, mouseCameraController;
 
     void Start()
