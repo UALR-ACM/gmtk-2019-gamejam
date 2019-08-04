@@ -41,7 +41,13 @@ public class UpgradeOrb : MonoBehaviour
         }
         else
         {
-            other.gameObject.GetComponent<EntityStats>().UpgradeHealth();
+            //other.gameObject.GetComponent<EntityStats>().UpgradeHealth();
+            GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall");
+            foreach(GameObject thing in walls)
+            {
+                thing.GetComponent<WallController>().health += 10;
+                Debug.Log(thing.GetComponent<WallController>().health);
+            }
         }
 
         Destroy(gameObject);
