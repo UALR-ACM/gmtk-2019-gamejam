@@ -36,7 +36,7 @@ public class UpgradeOrb : MonoBehaviour
         }
         else if (testMat.name == "SpeedBuff (Instance)")
         {
-            other.gameObject.GetComponent<EntityStats>().UpgradeSpeed();
+            other.gameObject.transform.root.GetComponent<EntityStats>().UpgradeSpeed();
             Debug.Log("Speed Increased");
         }
         else

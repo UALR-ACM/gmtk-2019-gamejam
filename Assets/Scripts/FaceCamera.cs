@@ -6,6 +6,12 @@ public class FaceCamera : MonoBehaviour {
 
     public Camera FirstViewCam;
 
+    private void Start()
+    {
+        GameObject tower = GameObject.Find("Tank");
+        FirstViewCam = tower.transform.GetChild(0).GetComponent<Camera>();
+    }
+
 	private void FixedUpdate() {
 		UpdateRotation();
 	}

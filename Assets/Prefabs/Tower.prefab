@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 5600065111160593501}
   - component: {fileID: 5600065111160593500}
   - component: {fileID: -5184298678083825543}
+  - component: {fileID: 3623518893138002975}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Player
@@ -210,6 +211,7 @@ MonoBehaviour:
   altFireBullet: {fileID: 3673575748617762979, guid: a0dcb6b211c25f949aa5ad78acff0d1b,
     type: 3}
   shotForce: 1500
+  secondaryFireTimer: 5
 --- !u!54 &5600065111160593506
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -349,6 +351,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffOrb: {fileID: 0}
+  powerLevel: 10
+  healthPercent: 0
+  speedPercent: 0.9
+  attackPercent: 0.1
+--- !u!114 &3623518893138002975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5600065111160593498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buffOrb: {fileID: 0}
   powerLevel: 10
   healthPercent: 0
   speedPercent: 0.9

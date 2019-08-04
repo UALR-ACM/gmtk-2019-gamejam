@@ -7,7 +7,8 @@ public enum EnemyType {
 }
 
 public class Enemy : MonoBehaviour {
-  [SerializeField] EnemyType type = default;
+    [SerializeField]
+    EnemyType type = EnemyType.Lich;
   EnemySpawner originSpawner;
   
   public EnemyType Type => type;
