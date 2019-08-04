@@ -15,7 +15,6 @@ public class TankShotController : MonoBehaviour
 
     public GameObject launchIngBullet;
 
-
     // sound manager
     public GameObject soundManager;
   

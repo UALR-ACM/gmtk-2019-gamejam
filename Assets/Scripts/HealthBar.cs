@@ -18,7 +18,7 @@ public class HealthBar : MonoBehaviour {
 
         float newWidth = healthFillMaxWidth * stats.GetHealthPercentage();
 
-        Debug.Log(newWidth.ToString());
+
 
         if (newWidth <= 0)
         {

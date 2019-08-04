@@ -15,6 +15,9 @@ public class TankBombController : MonoBehaviour
     public GameObject originBulletLaunch;
     public GameObject firstCam;
 
+    // sound manager
+    public GameObject soundManager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -31,6 +34,8 @@ public class TankBombController : MonoBehaviour
         {
             GameObject cannonShell = Instantiate(altFireBullet, originBulletLaunch.transform.position, transform.rotation);
             cannonShell.GetComponent<Rigidbody>().AddForce(firstCam.transform.forward * shotForce);
+            soundManager.GetComponent<SoundManager>().PlayCannonShot();
+
         }
 
     }

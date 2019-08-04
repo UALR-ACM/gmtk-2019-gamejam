@@ -5,20 +5,17 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 
-    public AudioSource laserShot;
+    public AudioSource laserShot, cannonShot, destroyBuild;
 
     void Start()
     {
-        
+       
     }
 
     void Update()
     {
         
-        if (Input.GetKey("p"))
-        {
-            PlayLaserShot();
-        }
+
 
 
     }
@@ -27,6 +24,16 @@ public class SoundManager : MonoBehaviour
     public void PlayLaserShot()
     {
         laserShot.Play();
+    }
+
+    public void PlayCannonShot()
+    {
+        cannonShot.Play();
+    }
+
+    public void PlayDestroyBuild()
+    {
+        destroyBuild.Play();
     }
 
 }
