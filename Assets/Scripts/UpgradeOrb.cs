@@ -53,9 +53,10 @@ public class UpgradeOrb : MonoBehaviour
                     Debug.Log(thing.GetComponent<WallController>().health);
                 }
             }
+            Destroy(gameObject);
         }
 
-        Destroy(gameObject);
+        
     }
 
 }
