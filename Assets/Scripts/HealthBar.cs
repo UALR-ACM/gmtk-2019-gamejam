@@ -11,6 +11,8 @@ public class HealthBar : MonoBehaviour {
 
 	private void Start() {
 		healthFillMaxWidth = healthFillPanel.rect.width;
+        stats = transform.root.gameObject.GetComponent<EntityStats>();
+        Debug.Log(stats.GetAttack() + ", " + stats.gameObject.name);
 	}
 
 	private void Update() {

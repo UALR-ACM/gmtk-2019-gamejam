@@ -23,7 +23,7 @@ public class MouseCameraController : MonoBehaviour {
         smoothV.x = Mathf.Lerp(smoothV.x, mouseDirection.x, 2f / smoothing);
         smoothV.y = Mathf.Lerp(smoothV.y, mouseDirection.y, 2f / smoothing);
         mouseLook += smoothV;
-        mouseLook.y = Mathf.Clamp(mouseLook.y, -90f, 90f);
+        mouseLook.y = Mathf.Clamp(mouseLook.y, -50f, 50f);
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
         player.transform.rotation = Quaternion.AngleAxis(mouseLook.x, player.transform.up);
     }

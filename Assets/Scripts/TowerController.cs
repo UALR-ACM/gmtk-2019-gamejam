@@ -30,16 +30,12 @@ public class TowerController : MonoBehaviour
         if (altFire && secondaryFire >= secondaryFireTimer)
         {
             GameObject cannonShell = Instantiate(altFireBullet, transform.position, transform.rotation);
-            Physics.IgnoreCollision(cannonShell.GetComponent<Collider>(), transform.parent.gameObject.GetComponent<Collider>());
+            Physics.IgnoreCollision(cannonShell.GetComponent<Collider>(), GetComponent<Collider>());
             cannonShell.GetComponent<Rigidbody>().AddForce(cam.transform.forward * shotForce);
 
             secondaryFire = 0f;
         }
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            ChangeFireRate(5f);
-        }
     }
 
     //Changes the fire rate of the primary weapon by decreasing the timer threshold. Passing in a lower value will cause the weapon to shoot faster
