@@ -10,6 +10,8 @@ public class TankBombController : MonoBehaviour
 
     public GameObject altFireBullet;
     public float shotForce;
+    public float secondaryFireTimer; //Time between primary fires (left-clicks
+    private float secondaryFire; //Determines whether or not the weapon can fire
 
     // origin and direction of bulltes
     public GameObject originBulletLaunch;
@@ -30,13 +32,15 @@ public class TankBombController : MonoBehaviour
 
         bool altFire = Input.GetButtonDown("Fire2");
 
-        if (altFire)
+        if (altFire && secondaryFire >= secondaryFireTimer)
         {
             GameObject cannonShell = Instantiate(altFireBullet, originBulletLaunch.transform.position, transform.rotation);
             cannonShell.GetComponent<Rigidbody>().AddForce(firstCam.transform.forward * shotForce);
             soundManager.GetComponent<SoundManager>().PlayCannonShot();
-
+            secondaryFire = 0f;
         }
+
+        secondaryFire += Time.deltaTime;
 
     }
 }
