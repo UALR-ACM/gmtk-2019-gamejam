@@ -8,29 +8,40 @@ public class NewSpawnScript : MonoBehaviour
 
     public PathWaypoint[] spawners;
     public Transform[] enemyPrefabs;
-    public TextMeshProUGUI waveTimer;
+    public TextMeshProUGUI waveTimerText;
+    public TextMeshProUGUI waveCounterText;
 
     private IEnumerator coroutine;
+    private IEnumerator coroutineTimer;
 
-    private float TimeBetweenTwoEnnemiSpawn = 8.0f;
+    private float TimeBetweenTwoEnnemiSpawn = 10.0f;
 
     private GameObject gameManager;
 
     public int numberOfEnimyByWaves = 1;
+    private int waveCounter = 0;
+    private float timeUntilNextWave;
+
+    public float timer;
 
     void Start()
     {
         coroutine = WaitAndSpawn();
         StartCoroutine(coroutine);
+
+
+
         gameManager = GameObject.Find("GameManager");
     }
 
     private void Update()
     {
-        //float TimeBetweenTwoEnnemiSpawn = 4.0f / gameManager.GetComponent<GameManager>().gameLevel;
-        //Debug.Log("time between two spawn : " + TimeBetweenTwoEnnemiSpawn);
 
-        waveTimer.SetText("Test");
+        // not working
+        //timer = Time.deltaTime;
+        //timeUntilNextWave = TimeBetweenTwoEnnemiSpawn - timer;
+        //waveTimerText.SetText(timeUntilNextWave.ToString());
+
     }
 
     private IEnumerator WaitAndSpawn()
@@ -41,9 +52,16 @@ public class NewSpawnScript : MonoBehaviour
         while (true)
         {
 
+            
+            waveCounterText.SetText(waveCounter.ToString());
+
             yield return new WaitForSeconds(TimeBetweenTwoEnnemiSpawn);
+
             //print("GameLevel : " + gameManager.GetComponent<GameManager>().gameLevel);
-            TimeBetweenTwoEnnemiSpawn = 8.0f / gameManager.GetComponent<GameManager>().gameLevel;
+            TimeBetweenTwoEnnemiSpawn = 10.0f / gameManager.GetComponent<GameManager>().gameLevel;
+
+            waveCounterText.SetText(waveCounter.ToString());
+
             //print("Time between two spawn of enemi" + TimeBetweenTwoEnnemiSpawn);
             numberOfEnimyByWaves = 1 + gameManager.GetComponent<GameManager>().gameLevel;
 
@@ -58,6 +76,9 @@ public class NewSpawnScript : MonoBehaviour
                 // to be sure that 2 ennemies will not pop at the same place
                 yield return new WaitForSeconds(0.5f);
             }
+
+            waveCounter += 1;
+
 
 
         }
@@ -78,7 +99,7 @@ public class NewSpawnScript : MonoBehaviour
         void InstanciateEnemi(int numPrefab, int numPath)
         {
 
-            Debug.Log("Enemy spawn");
+            //Debug.Log("Enemy spawn");
 
             GameObject enemy = Instantiate(enemyPrefabs[numPrefab]).gameObject;
             enemy.GetComponent<EnemyBehaviour>().currentWaypoint = spawners[numPath];
@@ -88,5 +109,12 @@ public class NewSpawnScript : MonoBehaviour
 
 
 
+
+
+
+
     }
+
+
+
 }

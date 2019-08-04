@@ -47,7 +47,7 @@ public class EntityStats : MonoBehaviour {
         buffOrb = Resources.Load<GameObject>("UpgradeOrb");
 
 
-        Debug.Log("Health at instanciation : " + maxHealth.ToString());
+        //Debug.Log("Health at instanciation : " + maxHealth.ToString());
 
 
     }
@@ -78,12 +78,12 @@ public class EntityStats : MonoBehaviour {
                 gameManager.GetComponent<GameManager>().gameLevel++;
             }
 
-            float buffDrop = Random.Range(0, 100);
-            if (buffDrop >= 50)
-            {
-                Instantiate(buffOrb, gameObject.transform.position, Quaternion.identity);
-                //Debug.Log("Orb spawned");
-            }
+            //float buffDrop = Random.Range(0, 100);
+            //if (buffDrop >= 50)
+            //{
+            //    Instantiate(buffOrb, gameObject.transform.position, Quaternion.identity);
+            //    //Debug.Log("Orb spawned");
+            //}
 
 
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyBehaviour : MonoBehaviour {
 
@@ -17,7 +18,7 @@ public class EnemyBehaviour : MonoBehaviour {
     private GameObject soundManager;
 
     // UI for loosing message
-    private GameObject loosingGameobject;
+    private Text loosingText;
     private Camera firstViewCam, upViewCam;
 
     private void Start() {
@@ -28,7 +29,7 @@ public class EnemyBehaviour : MonoBehaviour {
         //transform.LookAt(currentWaypoint.GetNextOnPath().transform.position);
 
         // loosing behavior
-        loosingGameobject = GameObject.Find("LoosingCanvas");
+        loosingText = GameObject.Find("LoosingText").GetComponent<Text>();
         firstViewCam = GameObject.Find("FirstViewCam").GetComponent<Camera>();
         upViewCam = GameObject.Find("UpCamera").GetComponent<Camera>();
     }
@@ -122,7 +123,7 @@ public class EnemyBehaviour : MonoBehaviour {
     {
         firstViewCam.enabled = false;
         upViewCam.enabled = true;
-        loosingGameobject.GetComponent<Canvas>().enabled = true;
+        loosingText.GetComponent<Canvas>().enabled = true;
     }
 
 
