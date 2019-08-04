@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class FaceCamera : MonoBehaviour {
 
-    public Camera FirstViewCam;
+    private Camera FirstViewCam;
 
-	private void FixedUpdate() {
+    private void Start()
+    {
+        FirstViewCam = GameObject.Find("FirstViewCam").GetComponent<Camera>(); ;
+    }
+
+    private void FixedUpdate() {
 		UpdateRotation();
 	}
 

@@ -15,6 +15,9 @@ public class TankShotController : MonoBehaviour
 
     public GameObject launchIngBullet;
 
+
+    // sound manager
+    public GameObject soundManager;
   
 
     void Start()
@@ -61,6 +64,8 @@ public class TankShotController : MonoBehaviour
             trail.enabled = true;
             primaryFire = 0f;
 
+            soundManager.GetComponent<SoundManager>().PlayLaserShot();
+
         }
 
         else
@@ -90,7 +95,7 @@ public class TankShotController : MonoBehaviour
                 // apply damages
                 var enemy = raycastHit.transform.gameObject;
                 var enemyStats = enemy.GetComponent<EntityStats>();
-                enemyStats.Damage(0.1f);
+                enemyStats.Damage(5.5f);
             }
 
         }

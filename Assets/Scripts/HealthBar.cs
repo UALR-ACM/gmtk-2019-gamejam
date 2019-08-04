@@ -6,16 +6,28 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour {
 	public EntityStats stats;
 
-	public RectTransform healthFillPanel;
+	public Transform healthFillPanel;
 	private float healthFillMaxWidth;
 
 	private void Start() {
-		healthFillMaxWidth = healthFillPanel.rect.width;
+		healthFillMaxWidth = healthFillPanel.localScale.x;
 	}
+    
 
 	private void Update() {
-		Rect rect = healthFillPanel.rect;
-		float newWidth = healthFillMaxWidth * stats.GetHealthPercentage();
-		healthFillPanel.rect.Set(rect.x, rect.y, newWidth, rect.height);
+
+        float newWidth = healthFillMaxWidth * stats.GetHealthPercentage();
+
+        Debug.Log(newWidth.ToString());
+
+        if (newWidth <= 0)
+        {
+            newWidth = 0;
+        }
+
+        Vector3 newScale = healthFillPanel.localScale;
+        newScale.x = newWidth;
+        healthFillPanel.localScale = newScale;
+
 	}
 }

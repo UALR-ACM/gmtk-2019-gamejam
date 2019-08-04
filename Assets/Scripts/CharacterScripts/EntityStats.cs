@@ -17,19 +17,34 @@ public class EntityStats : MonoBehaviour {
 	private float speed;
 	private float attack;
 
+    private Animator animController;
+
 	private void Start() {
 		maxHealth = healthPercent * powerLevel;
 		currentHealth = maxHealth;
 		speed = powerLevel * speedPercent;
 		attack = powerLevel * attackPercent;
-	}
+
+        animController = transform.GetComponent<Animator>();
+
+    }
 
 	public void Damage(float dmgAmount) {
 
+
+        Debug.Log("damage made");
+        Debug.Log(currentHealth);
 		currentHealth -= dmgAmount;
 
-		if (currentHealth < 0f)
-			Destroy(this.gameObject);
+		if (currentHealth <= 0f)
+        {
+
+            animController.SetBool("Die", true);
+            Invoke("DestroyCharact", 2);
+
+        }
+
+
 	}
 
 	public float GetHealthPercentage() {
@@ -39,4 +54,11 @@ public class EntityStats : MonoBehaviour {
 	public float getAttack() {
 		return attack;
 	}
+
+    private void DestroyCharact()
+    {
+        Destroy(this.gameObject);
+    }
+
+
 }
