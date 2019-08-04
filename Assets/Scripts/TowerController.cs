@@ -7,6 +7,7 @@ public class TowerController : MonoBehaviour
     Rigidbody rb;
     GameObject cam;
 
+    public GameObject buffOrb;
     public GameObject altFireBullet;
     public float shotForce;
     public float secondaryFireTimer = 5.0f;

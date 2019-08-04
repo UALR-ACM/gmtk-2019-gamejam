@@ -52,4 +52,25 @@ public class TankMouvement : MonoBehaviour
 
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        Renderer rend = other.GetComponent<Renderer>();
+        Material testMat = rend.material; 
+        if(other.gameObject.CompareTag("UpgradeOrb")){
+            //GameObject triggerHandler = other.gameObject;
+            if(testMat.name == "DamageBuff")
+            {
+                gameObject.GetComponent<EntityStats>().UpgradeAttack();
+            }else if (testMat.name == "SpeedBuff")
+            {
+                gameObject.GetComponent<EntityStats>().UpgradeSpeed();
+            }
+            else
+            {
+                gameObject.GetComponent<EntityStats>().UpgradeHealth();
+            }
+        }
+
+        Destroy(other.gameObject);
+    }
 }
