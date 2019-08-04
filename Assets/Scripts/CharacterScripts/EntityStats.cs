@@ -78,12 +78,23 @@ public class EntityStats : MonoBehaviour {
                 gameManager.GetComponent<GameManager>().gameLevel++;
             }
 
+<<<<<<< HEAD
             //float buffDrop = Random.Range(0, 100);
             //if (buffDrop >= 50)
             //{
             //    Instantiate(buffOrb, gameObject.transform.position, Quaternion.identity);
             //    //Debug.Log("Orb spawned");
             //}
+=======
+            float buffDrop = Random.Range(0, 100);
+            if (buffDrop >= 50)
+            {
+                Vector3 orbPos = gameObject.transform.position;
+                orbPos.y += 3;
+                Instantiate(buffOrb, orbPos, Quaternion.identity);
+                //Debug.Log("Orb spawned");
+            }
+>>>>>>> ddb653c959ab345efda4d5060616fff3cc5443bf
 
 
         }
