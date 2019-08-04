@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class EntityStats : MonoBehaviour {
 
+
 	private float powerLevel = 10f;
+    public GameObject buffOrb;
+    
 
 	[Range(0f, 1f)]
 	public float healthPercent;
@@ -22,7 +25,6 @@ public class EntityStats : MonoBehaviour {
     
     private Animator animController;
 
-    private GameObject buffOrb;
 
     private GameObject gameManager;
 
@@ -53,7 +55,7 @@ public class EntityStats : MonoBehaviour {
         //Debug.Log(currentHealth);
 		currentHealth -= dmgAmount;
 
-		if (currentHealth <= 0f)
+        if (currentHealth <= 0f)
         {
             isLiving = false;
             animController.SetBool("Die", true);
@@ -76,6 +78,7 @@ public class EntityStats : MonoBehaviour {
 
         }
 
+
 	}
 
 	public float GetHealthPercentage() {
@@ -94,11 +97,11 @@ public class EntityStats : MonoBehaviour {
         return speed;
     }
 
+
     public bool GetLivingStatus()
     {
         return this.isLiving;
     }
-
 
     public void UpgradeAttack()
     {
@@ -107,11 +110,20 @@ public class EntityStats : MonoBehaviour {
 
     public void UpgradeSpeed()
     {
-        speed += 1;
+        TankMouvement movement = gameObject.GetComponent<TankMouvement>();
+        movement.speedMouvement += 0.5f;
     }
 
     public void UpgradeHealth()
     {
-        maxHealth += 1;
+
+        if (currentHealth == maxHealth)
+        {
+            maxHealth += 4;
+        }
+        else
+        {
+            currentHealth += 3;
+        }
     }
 }

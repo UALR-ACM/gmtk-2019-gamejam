@@ -31,7 +31,6 @@ public class EnemyBehaviour : MonoBehaviour {
         loosingGameobject = GameObject.Find("LoosingCanvas");
         firstViewCam = GameObject.Find("FirstViewCam").GetComponent<Camera>();
         upViewCam = GameObject.Find("UpCamera").GetComponent<Camera>();
-
     }
 
     private void Update() {
