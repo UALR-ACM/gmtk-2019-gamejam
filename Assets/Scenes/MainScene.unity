@@ -598,6 +598,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3.6413
       objectReference: {fileID: 0}
+    - target: {fileID: 2370603249533988645, guid: 274c4c35ed05ea14c87492064b3cadfd,
+        type: 3}
+      propertyPath: buffOrb
+      value: 
+      objectReference: {fileID: 3973037993560284280, guid: 51a2e363b35b4164aaf92c0d37d921b8,
+        type: 3}
+    - target: {fileID: 3967403484451266745, guid: 274c4c35ed05ea14c87492064b3cadfd,
+        type: 3}
+      propertyPath: FirstViewCam
+      value: 
+      objectReference: {fileID: 1059711877}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 274c4c35ed05ea14c87492064b3cadfd, type: 3}
 --- !u!1 &371011519 stripped
@@ -632,6 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffOrb: {fileID: 3973037993560284280, guid: 51a2e363b35b4164aaf92c0d37d921b8, type: 3}
   powerLevel: 10
   healthPercent: 0.05
   speedPercent: 0
@@ -1045,6 +1057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffOrb: {fileID: 3973037993560284280, guid: 51a2e363b35b4164aaf92c0d37d921b8, type: 3}
   powerLevel: 10
   healthPercent: 0.05
   speedPercent: 0
@@ -1093,6 +1106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffOrb: {fileID: 3973037993560284280, guid: 51a2e363b35b4164aaf92c0d37d921b8, type: 3}
   powerLevel: 10
   healthPercent: 0.05
   speedPercent: 0
@@ -1141,6 +1155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffOrb: {fileID: 3973037993560284280, guid: 51a2e363b35b4164aaf92c0d37d921b8, type: 3}
   powerLevel: 10
   healthPercent: 0.05
   speedPercent: 0
@@ -1184,8 +1199,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059711872}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 16.38, z: 4.11}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 16.379995, z: 4.1100006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 535116205}
@@ -1300,7 +1315,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7531a50c7288bfc43b7c700ccd5d9750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawner: {fileID: 0}
   tank: {fileID: 1979069344}
   headTank: {fileID: 535116206}
   firstCam: {fileID: 1059711877}
@@ -1336,6 +1350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffOrb: {fileID: 3973037993560284280, guid: 51a2e363b35b4164aaf92c0d37d921b8, type: 3}
   powerLevel: 10
   healthPercent: 0.05
   speedPercent: 0
@@ -1488,6 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffOrb: {fileID: 3973037993560284280, guid: 51a2e363b35b4164aaf92c0d37d921b8, type: 3}
   powerLevel: 10
   healthPercent: 0.05
   speedPercent: 0
@@ -1510,6 +1526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffOrb: {fileID: 3973037993560284280, guid: 51a2e363b35b4164aaf92c0d37d921b8, type: 3}
   powerLevel: 10
   healthPercent: 0.05
   speedPercent: 0
@@ -1687,6 +1704,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3.6413
       objectReference: {fileID: 0}
+    - target: {fileID: 4382869112392040599, guid: 176299a76ecfc7544b22a66fae200ac7,
+        type: 3}
+      propertyPath: buffOrb
+      value: 
+      objectReference: {fileID: 3973037993560284280, guid: 51a2e363b35b4164aaf92c0d37d921b8,
+        type: 3}
+    - target: {fileID: 9202741750794360248, guid: 176299a76ecfc7544b22a66fae200ac7,
+        type: 3}
+      propertyPath: FirstViewCam
+      value: 
+      objectReference: {fileID: 1059711877}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 176299a76ecfc7544b22a66fae200ac7, type: 3}
 --- !u!1001 &1871336290
@@ -1772,6 +1800,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1979069345}
   - component: {fileID: 1979069346}
+  - component: {fileID: 1979069347}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -1808,6 +1837,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMouvement: 50
+--- !u!64 &1979069347
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979069344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
 --- !u!1001 &2003794091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1879,6 +1922,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3.6413
       objectReference: {fileID: 0}
+    - target: {fileID: 682196068303614975, guid: 6bbfea6690ef7724ba495c866081f855,
+        type: 3}
+      propertyPath: buffOrb
+      value: 
+      objectReference: {fileID: 3973037993560284280, guid: 51a2e363b35b4164aaf92c0d37d921b8,
+        type: 3}
+    - target: {fileID: 9091974104545770532, guid: 6bbfea6690ef7724ba495c866081f855,
+        type: 3}
+      propertyPath: FirstViewCam
+      value: 
+      objectReference: {fileID: 1059711877}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bbfea6690ef7724ba495c866081f855, type: 3}
 --- !u!1 &2012569137 stripped
@@ -1913,6 +1967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffOrb: {fileID: 3973037993560284280, guid: 51a2e363b35b4164aaf92c0d37d921b8, type: 3}
   powerLevel: 10
   healthPercent: 0.05
   speedPercent: 0
@@ -1948,6 +2003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1e2935c03625a498a3e69f7c63d6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffOrb: {fileID: 3973037993560284280, guid: 51a2e363b35b4164aaf92c0d37d921b8, type: 3}
   powerLevel: 10
   healthPercent: 0.05
   speedPercent: 0
@@ -2043,15 +2099,15 @@ PrefabInstance:
       propertyPath: FirstViewCam
       value: 
       objectReference: {fileID: 1059711877}
-    - target: {fileID: 5400651485256292683, guid: 4345753c994517a419b1378caf263baa,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1059711877}
     - target: {fileID: 5400651484080156054, guid: 4345753c994517a419b1378caf263baa,
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 5400651485256292683, guid: 4345753c994517a419b1378caf263baa,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1059711877}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4345753c994517a419b1378caf263baa, type: 3}
