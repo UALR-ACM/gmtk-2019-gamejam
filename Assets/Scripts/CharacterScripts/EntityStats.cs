@@ -47,7 +47,7 @@ public class EntityStats : MonoBehaviour {
         buffOrb = Resources.Load<GameObject>("UpgradeOrb");
 
 
-        Debug.Log("power level at instanciation : " + maxHealth.ToString());
+        Debug.Log("Health at instanciation : " + maxHealth.ToString());
 
 
     }

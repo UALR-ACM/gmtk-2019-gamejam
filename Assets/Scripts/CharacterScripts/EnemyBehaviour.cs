@@ -130,6 +130,8 @@ public class EnemyBehaviour : MonoBehaviour {
     public void StopMouvementAndAttack()
     {
         mouv = false;
+        charactAnim.SetBool("isIdle", true);
+        charactAnim.SetBool("walk", false);
         charactAnim.SetBool("Attack", true);
     }
 
