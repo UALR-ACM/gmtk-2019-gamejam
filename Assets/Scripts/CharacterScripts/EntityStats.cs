@@ -44,4 +44,13 @@ public class EntityStats : MonoBehaviour {
     public float GetSpeed() {
         return speed;
     }
+
+	public void SetPowerLevel(float level) {
+		powerLevel = level;
+		
+		maxHealth = healthPercent * powerLevel;
+		currentHealth = maxHealth;
+		speed = powerLevel * speedPercent;
+		attack = powerLevel * attackPercent;
+	}
 }
